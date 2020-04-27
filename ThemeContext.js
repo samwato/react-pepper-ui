@@ -15,7 +15,7 @@ class ThemeProvider extends Component {
       color3: '#E1E5EB',
       textColor: '#2F363D',
       iconColor: '#2F363D',
-      featureDark: '#0066FF',
+      featureDark: 'rgb(0,102,255)',
       featureLight: '#EAF1FE',
       success: '#60C480',
       error: '#E02C54'
@@ -26,7 +26,7 @@ class ThemeProvider extends Component {
       color3: '#444D56',
       textColor: '#FFFFFF',
       iconColor: '#FFFFFF',
-      featureDark: '#0066FF',
+      featureDark: 'rgb(0,102,255)',
       featureLight: '#EAF1FE',
       success: '#60C480',
       error: '#E02C54'
