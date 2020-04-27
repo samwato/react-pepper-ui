@@ -1,10 +1,14 @@
 import React from 'react'
 
 export default ({ type, theme, children }) => {
+  const styles ={
+    color: theme.color,
+    backgroundColor: theme.backgroundColor
+  }
   return (
     <button
       type={type}
-      style={{ color: theme.color, backgroundColor: theme.backgroundColor }}
+      style={styles}
     >
       {children}
     </button>
