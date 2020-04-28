@@ -10,11 +10,11 @@ class ThemeProvider extends Component {
   state = {
     isLightTheme: true,
     light: {
-      color1: '#FFFFFF',
+      color1: 'rgb(255,255,255)',
       color2: '#F6F8FA',
       color3: '#E1E5EB',
-      textColor: '#2F363D',
-      iconColor: '#2F363D',
+      textColor: 'rgb(47, 54, 61)',
+      iconColor: 'rgb(47, 54, 61)',
       featureDark: 'rgb(0,102,255)',
       featureLight: '#EAF1FE',
       success: '#60C480',
@@ -22,10 +22,10 @@ class ThemeProvider extends Component {
     },
     dark: {
       color1: '#24292E',
-      color2: '#2F363D',
+      color2: 'rgb(47, 54, 61)',
       color3: '#444D56',
-      textColor: '#FFFFFF',
-      iconColor: '#FFFFFF',
+      textColor: 'rgb(255,255,255)',
+      iconColor: 'rgb(255,255,255)',
       featureDark: 'rgb(0,102,255)',
       featureLight: '#EAF1FE',
       success: '#60C480',

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, useEffect, useRef } from 'react'
 import ThemeContext from '../ThemeContext'
 import css from './DropdownSelect.module.css'
 
@@ -6,7 +6,17 @@ const DropdownSelect = ({ varient, selected, prefix, options, handler, children 
   const { isLightTheme, light, dark } = useContext(ThemeContext)
   const theme = isLightTheme ? light : dark
 
+  /* user interactions */
   const [clicked, updateClicked] = useState(false)
+  const handleClick = (e) => {
+    if(selectRef.current && !selectRef.current.contains(e.target)) {
+      updateClicked(false)
+    }
+  }
+  const selectRef = useRef(null);
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClick, false)
+  },[selectRef])
 
   let buttonStyles = {}
 
@@ -64,25 +74,26 @@ const DropdownSelect = ({ varient, selected, prefix, options, handler, children 
       </svg>`
 
   return (
-    <div className={css.container}>
-      <a
+    <div ref={selectRef} className={css.container}>
+      <div
         className={css.button}
         style={buttonStyles}
         onClick={() => updateClicked(!clicked)}
       >
         {prefix}{selected}
         <img
+          alt=""
           className={css.icon}
           src={clicked ? clickedIcon : unClickedIcon}
         />
-      </a>
+    </div>
 
       {clicked ?
         <div
           style={dropdownStyles}
           className={css.dropdown_container}>
           {options.map((item, i) => (
-            <a
+            <div
               style={ i !== 0 ? { borderTop: `1px solid ${theme.color3}`} : null }
               className={css.dropdown_item}
               key={i}
@@ -90,7 +101,7 @@ const DropdownSelect = ({ varient, selected, prefix, options, handler, children 
                 handler(item)
                 updateClicked(!clicked)
               }}
-            >{item}</a>
+            >{item}</div>
           ))}
         </div>
        : null }
