@@ -35,6 +35,7 @@ const DropdownSelect = ({ varient, selected, prefix, options, handler, children 
   } else {
     buttonStyles.backgroundColor = theme.featureDark
     buttonStyles.border = `1px solid ${theme.featureDark}`
+    buttonStyles.color = theme.featureLight
   }
 
   let dropdownStyles = {

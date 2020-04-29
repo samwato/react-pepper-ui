@@ -35,6 +35,7 @@ const DropdownLink = ({ varient, title, children }) => {
   } else {
     buttonStyles.backgroundColor = theme.featureDark
     buttonStyles.border = `1px solid ${theme.featureDark}`
+    buttonStyles.color = theme.featureLight
   }
 
   let dropdownStyles = {

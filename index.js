@@ -15,6 +15,11 @@ export { default as Layout } from './Layout/Layout'
 export { default as ContentContainer } from './ContentContainer/ContentContainer'
 export { default as ContentHeader } from './ContentHeader/ContentHeader'
 
+/* Table */
+export { default as Table } from './Table/Table'
+export { default as TableHeader } from './TableHeader/TableHeader'
+export { default as TableCell } from './TableCell/TableCell'
+
 /* Typography Components */
 export { default as ContentTitle } from './ContentTitle/ContentTitle'
 
