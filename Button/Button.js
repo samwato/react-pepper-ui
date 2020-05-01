@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import ThemeContext from '../ThemeContext'
+import { ThemeContext } from '../ThemeContext'
 import css from './Button.module.css'
 
 const Button = ({ varient, size, type, handler, name, children }) => {
@@ -21,6 +21,7 @@ const Button = ({ varient, size, type, handler, name, children }) => {
     styles.backgroundColor = theme.color3
     styles.border = `1px solid ${theme.color3}`
   } else {
+    styles.color = 'white'
     styles.backgroundColor = theme.featureDark
     styles.border = `1px solid ${theme.featureDark}`
   }

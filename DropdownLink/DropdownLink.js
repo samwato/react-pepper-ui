@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect, useRef } from 'react'
-import ThemeContext from '../ThemeContext'
+import { ThemeContext } from '../ThemeContext'
 import css from './DropdownLink.module.css'
 
 const DropdownLink = ({ varient, title, children }) => {
@@ -54,7 +54,6 @@ const DropdownLink = ({ varient, title, children }) => {
       stroke-width="2"
       stroke-linecap="round"
       stroke-linejoin="round"
-      class="feather feather-chevron-down"
       >
       <polyline points="6 9 12 15 18 9"></polyline>
     </svg>`
@@ -69,7 +68,6 @@ const DropdownLink = ({ varient, title, children }) => {
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
-        class="feather feather-chevron-down"
         >
         <polyline points="18 15 12 9 6 15"></polyline>
       </svg>`

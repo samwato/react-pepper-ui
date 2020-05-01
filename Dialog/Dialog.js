@@ -1,5 +1,5 @@
 import React, { useRef, useContext, useState, useEffect } from 'react'
-import ThemeContext from '../ThemeContext'
+import { ThemeContext } from '../ThemeContext'
 import css from './Dialog.module.css'
 
 const Dialog = ({ type, varient, title, children }) => {

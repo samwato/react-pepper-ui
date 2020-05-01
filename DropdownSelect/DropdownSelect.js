@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect, useRef } from 'react'
-import ThemeContext from '../ThemeContext'
+import { ThemeContext } from '../ThemeContext'
 import css from './DropdownSelect.module.css'
 
 const DropdownSelect = ({ varient, selected, prefix, options, handler, children }) => {
@@ -35,8 +35,10 @@ const DropdownSelect = ({ varient, selected, prefix, options, handler, children 
   } else {
     buttonStyles.backgroundColor = theme.featureDark
     buttonStyles.border = `1px solid ${theme.featureDark}`
-    buttonStyles.color = theme.featureLight
+    buttonStyles.color = 'white'
   }
+
+  let iconStroke = varient === 'primary' ? 'white' : theme.iconColor
 
   let dropdownStyles = {
     color: theme.textColor,
@@ -50,7 +52,7 @@ const DropdownSelect = ({ varient, selected, prefix, options, handler, children 
       height="24"
       viewBox="0 0 24 24"
       fill="none"
-      stroke="${theme.featureDark}"
+      stroke="${iconStroke}"
       stroke-width="2"
       stroke-linecap="round"
       stroke-linejoin="round"
@@ -65,7 +67,7 @@ const DropdownSelect = ({ varient, selected, prefix, options, handler, children 
         height="24"
         viewBox="0 0 24 24"
         fill="none"
-        stroke="${theme.featureDark}"
+        stroke="${iconStroke}"
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"

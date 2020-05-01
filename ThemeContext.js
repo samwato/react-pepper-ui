@@ -1,13 +1,14 @@
-import React, { createContext, Component } from 'react'
+import React, { createContext, useState } from 'react'
 
-import UserContext from '../context/UserContext'
+export const ThemeContext = createContext()
 
-const ThemeContext = createContext()
+const ThemeContextProvider = ({ children }) => {
 
-class ThemeProvider extends Component {
-  static contextType = UserContext
+  const switchTheme = () => {
+    updateTheme({ ...theme, isLightTheme: !theme.isLightTheme})
+  }
 
-  state = {
+  const [theme, updateTheme] = useState({
     isLightTheme: true,
     light: {
       color1: 'rgb(255,255,255)',
@@ -31,21 +32,13 @@ class ThemeProvider extends Component {
       success: '#60C480',
       error: '#E02C54'
     }
-  }
+  })
 
-  render() {
-    return (
-      <ThemeContext.Provider
-        value={{
-          ...this.state,
-          isLightTheme: this.context.isLightTheme
-        }}>
-        {this.props.children}
-      </ThemeContext.Provider>
-    )
-  }
+  return (
+    <ThemeContext.Provider value={{ ...theme, switchTheme }}>
+      {children}
+    </ThemeContext.Provider>
+  )
 }
 
-export { ThemeProvider }
-
-export default ThemeContext
+export default ThemeContextProvider

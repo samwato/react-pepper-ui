@@ -1,22 +1,21 @@
 import React, { useContext } from 'react'
 import { ThemeContext } from '../ThemeContext'
-import css from './TableHeader.module.css'
 
-const TableHeader = ({ children }) => {
+const Dashboard = ({ children }) => {
   const { isLightTheme, light, dark } = useContext(ThemeContext)
   const theme = isLightTheme ? light : dark
 
-  const containerStyles = {
+  const styles = {
+    backgroundColor: theme.color1,
     color: theme.textColor,
-    backgroundColor: theme.color2,
-    borderTop: `1px solid ${theme.color3}`
+    height: '100%'
   }
 
   return (
-    <div style={containerStyles} className={css.container}>
+    <div style={styles}>
       {children}
     </div>
   )
 }
 
-export default TableHeader
+export default Dashboard
