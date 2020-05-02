@@ -2,14 +2,15 @@ import React, { useContext } from 'react'
 import { ThemeContext } from '../ThemeContext'
 import css from './Table.module.css'
 
-const Table = ({ title, columns, children }) => {
+const Table = ({ title, columns, children, active }) => {
   const { isLightTheme, light, dark } = useContext(ThemeContext)
   const theme = isLightTheme ? light : dark
 
   const containerStyles = {
     color: theme.textColor,
     backgroundColor: theme.color1,
-    border: `1px solid ${theme.color3}`
+    border: `1px solid ${theme.color3}`,
+    opacity: active ? '1' : '0.5'
   }
 
   const tableStyles = {

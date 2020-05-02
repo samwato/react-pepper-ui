@@ -34,3 +34,4 @@ export { default as ContentTitle } from './ContentTitle/ContentTitle'
 
 /* Elements */
 export { default as Dialog } from './Dialog/Dialog'
+export { default as Message } from './Message/Message'
