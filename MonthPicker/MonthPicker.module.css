@@ -23,7 +23,7 @@
   margin-right: 10px;
 }
 
-.time_picker_container {
+.month_picker_container {
   width: 150px;
   max-height: 220px;
   overflow: auto;
@@ -34,14 +34,14 @@
   z-index: 9;
 }
 
-.times_container {
+.months_container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
 }
 
-.times_item {
+.months_item {
   text-decoration: none;
   text-align: center;
   width: 100%;
@@ -49,7 +49,7 @@
   border-radius: 5px;
 }
 
-.times_item:hover {
+.months_item:hover {
   background-color: rgba(0,0,0,0.1);
   font-weight: 900;
   cursor: pointer;

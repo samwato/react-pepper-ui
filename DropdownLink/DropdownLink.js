@@ -16,6 +16,9 @@ const DropdownLink = ({ varient, title, children }) => {
   const linkRef = useRef(null);
   useEffect(() => {
     document.addEventListener('mousedown', handleClick, false)
+    return () => {
+      document.removeEventListener('mousedown', handleClick, false)
+    }
   },[linkRef])
 
   let buttonStyles = {}

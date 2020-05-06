@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { ThemeContext } from '../ThemeContext'
 import css from './Button.module.css'
 
-const Button = ({ varient, size, type, handler, name, children }) => {
+const Button = ({ varient, size, type, handler, name, fullwidth, children }) => {
   const { isLightTheme, light, dark } = useContext(ThemeContext)
   const theme = isLightTheme ? light : dark
 

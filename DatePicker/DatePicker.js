@@ -24,10 +24,12 @@ const DatePicker = ({ label, name, handlerChange, fullwidth, cleared }) => {
   const calendarRef = useRef(null);
   useEffect(() => {
     document.addEventListener('mousedown', handlePopUp, false)
+    return () => {
+      document.removeEventListener('mousedown', handlePopUp, false)
+    }
   },[calendarRef])
 
   const handleMonthChange = (e) => {
-    console.log(e.target.name)
     const { name } = e.target
     if (name === 'previous') setWindowDate(moment(windowDate.subtract(1,'months')))
     if (name === 'next') setWindowDate(moment(windowDate.add(1,'months')))
@@ -103,6 +105,8 @@ const DatePicker = ({ label, name, handlerChange, fullwidth, cleared }) => {
   let containerStyles = {}
   if(fullwidth) {
     containerStyles.width = '100%'
+  } else {
+    containerStyles.margin = '0 10px'
   }
 
 
@@ -110,7 +114,7 @@ const DatePicker = ({ label, name, handlerChange, fullwidth, cleared }) => {
     <div ref={calendarRef} style={containerStyles} className={css.container}>
 
       {/* label */}
-      { label ? <label className={css.label}>{label}</label> : null }
+      { label ? <div className={css.label}><label>{label}</label></div> : null }
 
       {/* input */}
       <div style={inputStyles} className={css.input} onClick={() => setPopUp(!popUp)}>

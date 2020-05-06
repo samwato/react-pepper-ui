@@ -16,6 +16,9 @@ const DropdownSelect = ({ varient, selected, prefix, options, handler, children 
   const selectRef = useRef(null);
   useEffect(() => {
     document.addEventListener('mousedown', handleClick, false)
+    return () => {
+      document.removeEventListener('mousedown', handleClick, false)
+    }
   },[selectRef])
 
   let buttonStyles = {}

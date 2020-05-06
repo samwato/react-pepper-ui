@@ -15,6 +15,8 @@ export { default as NumberInput } from './NumberInput/NumberInput'
 export { default as DropdownSelect } from './DropdownSelect/DropdownSelect'
 export { default as DatePicker } from './DatePicker/DatePicker'
 export { default as TimePicker } from './TimePicker/TimePicker'
+export { default as MonthPicker } from './MonthPicker/MonthPicker'
+export { default as YearPicker } from './YearPicker/YearPicker'
 export { default as Button } from './Button/Button'
 export { default as FormGroup } from './FormGroup/FormGroup'
 

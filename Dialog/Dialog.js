@@ -17,6 +17,9 @@ const Dialog = ({ type, varient, title, children }) => {
   const dialogRef = useRef(null);
   useEffect(() => {
     document.addEventListener('mousedown', handleClick, false)
+    return () => {
+      document.removeEventListener('mousedown', handleClick, false)
+    }
   },[dialogRef])
 
   /* Styles */
