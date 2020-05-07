@@ -19,6 +19,8 @@ export { default as MonthPicker } from './MonthPicker/MonthPicker'
 export { default as YearPicker } from './YearPicker/YearPicker'
 export { default as Button } from './Button/Button'
 export { default as FormGroup } from './FormGroup/FormGroup'
+export { default as ButtonGroup } from './ButtonGroup/ButtonGroup'
+export { default as ButtonSpacer } from './ButtonSpacer/ButtonSpacer'
 
 /* Layout Components */
 export { default as Dashboard } from './Dashboard/Dashboard'

@@ -4,7 +4,7 @@ import css from './MonthPicker.module.css'
 
 import buildMonths from './buildMonths'
 
-const MonthPicker = ({ label, name, handlerChange, fullwidth, cleared, defaultValue, hideIcon }) => {
+const MonthPicker = ({ label, name, handlerChange, fullwidth, cleared, defaultValue, hideIcon, grouped }) => {
   /* theme context */
   const { isLightTheme, light, dark } = useContext(ThemeContext)
   const theme = isLightTheme ? light : dark
@@ -73,12 +73,32 @@ const MonthPicker = ({ label, name, handlerChange, fullwidth, cleared, defaultVa
     backgroundColor: theme.color2,
     border: `1px solid ${theme.color3}`
   }
-  const monthPickerContainerStyles = inputStyles
+  const monthPickerContainerStyles = {
+    color: theme.textColor,
+    backgroundColor: theme.color2,
+    border: `1px solid ${theme.color3}`
+  }
   let containerStyles = {}
   if(fullwidth) {
     containerStyles.width = '100%'
   } else {
     containerStyles.margin = '0 10px'
+  }
+
+  if(grouped) {
+    containerStyles.height = '100%'
+    containerStyles.margin = '0'
+  }
+  if(grouped === 'left') {
+    inputStyles.borderRadius = '10px 0 0 10px'
+    inputStyles.borderRight = 'none'
+  }
+  if(grouped === 'middle') {
+    inputStyles.borderRadius = '0'
+  }
+  if(grouped === 'right') {
+    inputStyles.borderRadius = '0 10px 10px 0'
+    inputStyles.borderLeft = 'none'
   }
 
   return (
