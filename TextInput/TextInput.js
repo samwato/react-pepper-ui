@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { ThemeContext } from '../ThemeContext'
 import css from './TextInput.module.css'
 
-const TextInput = ({ required, label, name, value, fullwidth, handleChange }) => {
+const TextInput = ({ required, label, placeholder, name, value, fullwidth, handleChange }) => {
   const { isLightTheme, light, dark } = useContext(ThemeContext)
   const theme = isLightTheme ? light : dark
 
@@ -21,6 +21,7 @@ const TextInput = ({ required, label, name, value, fullwidth, handleChange }) =>
     <div className={css.container} style={containerStyles}>
       { label ? <label className={css.label}>{label}</label> : null }
       <input
+        placeholder={ placeholder ? placeholder : null }
         style={inputStyles}
         className={css.input}
         type="text"

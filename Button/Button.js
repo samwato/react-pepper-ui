@@ -32,6 +32,7 @@ const Button = ({ varient, size, type, handler, name, fullwidth, grouped, childr
   if(size === 'sm' || size === 'small') {
     styles.fontSize = '0.85em'
     styles.padding = '7px 17px'
+    iconStyles.height = '18px'
   } else {
     styles.fontSize = '1em'
     styles.padding = '10px 20px'
@@ -74,7 +75,7 @@ const Button = ({ varient, size, type, handler, name, fullwidth, grouped, childr
       style={styles}
       onClick={handler}
     >
-      { icon ? <img className={css.icon} style={iconStyles} src={icons[icon]} /> : null }
+      { icon ? <img alt="" className={css.icon} style={iconStyles} src={icons[icon]} /> : null }
       {children}
     </button>
   )

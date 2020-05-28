@@ -9,6 +9,7 @@ export { default as DropdownLink } from './DropdownLink/DropdownLink'
 /* Form Components */
 export { default as Form } from './Form/Form'
 export { default as TextInput } from './TextInput/TextInput'
+export { default as SearchInput } from './SearchInput/SearchInput'
 export { default as TextArea } from './TextArea/TextArea'
 export { default as RadioInput } from './RadioInput/RadioInput'
 export { default as NumberInput } from './NumberInput/NumberInput'
@@ -32,6 +33,7 @@ export { default as ContentHeader } from './ContentHeader/ContentHeader'
 export { default as Table } from './Table/Table'
 export { default as TableHeader } from './TableHeader/TableHeader'
 export { default as TableCell } from './TableCell/TableCell'
+export { default as TablePagination } from './TablePagination/TablePagination'
 
 /* Typography Components */
 export { default as ContentTitle } from './ContentTitle/ContentTitle'

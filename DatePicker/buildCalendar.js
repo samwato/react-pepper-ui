@@ -4,7 +4,6 @@ export default (timestamp, currentDate) => {
   const daysInNextMonth = timestamp.add(1,'months').daysInMonth()
   const daysInMonth = timestamp.daysInMonth()
 
-  const dateSelected = timestamp.date()
   const dateSelectedMonth = timestamp.month()
   const dateSelectedYear = timestamp.year()
 
