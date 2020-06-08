@@ -6,7 +6,7 @@ const LogoTitle = ({ children }) => {
   const { isLightTheme, light, dark } = useContext(ThemeContext)
   const theme = isLightTheme ? light : dark
 
-  const styles = {
+  let styles = {
     color: theme.textColor
   }
 

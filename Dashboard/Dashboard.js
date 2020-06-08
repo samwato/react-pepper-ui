@@ -6,7 +6,7 @@ const Dashboard = ({ children }) => {
   const theme = isLightTheme ? light : dark
 
   const styles = {
-    backgroundColor: theme.color1,
+    backgroundColor: theme.bgColor,
     color: theme.textColor,
     height: '100%'
   }

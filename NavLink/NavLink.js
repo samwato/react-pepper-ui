@@ -16,11 +16,14 @@ const NavLink = ({ to, exact, children }) => {
 
   let styles = {
     color: theme.textColor,
-    border: `1px solid ${theme.color3}`
+    border: `1px solid ${theme.color2}`,
+    boxShadow: theme.shadow1
   }
 
   if (match) {
-    styles.backgroundColor = theme.color3
+    styles.backgroundColor = theme.featureDark
+    styles.border = `1px solid ${theme.featureDark}`
+    styles.color = 'rgb(255,255,255)'
   } else {
     styles.backgroundColor = theme.color1
   }

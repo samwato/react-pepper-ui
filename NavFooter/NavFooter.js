@@ -1,21 +1,25 @@
 import React, { useContext } from 'react'
 import { ThemeContext } from '../ThemeContext'
-import css from './TableCell.module.css'
+import css from './NavFooter.module.css'
 
-const TableCell = ({ children }) => {
+const NavFooter = ({ children }) => {
   const { isLightTheme, light, dark } = useContext(ThemeContext)
   const theme = isLightTheme ? light : dark
 
-  const containerStyles = {
+  let styles = {
     color: theme.textColor,
+    backgroundColor: theme.bgColor,
     borderTop: `1px solid ${theme.color2}`
   }
 
   return (
-    <div style={containerStyles} className={css.container}>
+    <nav
+      className={css.navbar}
+      style={styles}
+    >
       {children}
-    </div>
+    </nav>
   )
 }
 
-export default TableCell
+export default NavFooter

@@ -23,7 +23,9 @@ const Dialog = ({ type, varient, title, children }) => {
   },[dialogRef])
 
   /* Styles */
-  let buttonStyles = {}
+  let buttonStyles = {
+    boxShadow: theme.shadow1
+  }
   if (varient === 'secondary') {
     buttonStyles.color = theme.featureDark
     buttonStyles.backgroundColor = theme.featureLight
@@ -31,7 +33,7 @@ const Dialog = ({ type, varient, title, children }) => {
   } else if (varient === 'outline') {
     buttonStyles.color = theme.textColor
     buttonStyles.backgroundColor = theme.color1
-    buttonStyles.border = `1px solid ${theme.color3}`
+    buttonStyles.border = `1px solid ${theme.color2}`
   } else if (varient === 'normal') {
     buttonStyles.color = theme.textColor
     buttonStyles.backgroundColor = theme.color3

@@ -6,7 +6,9 @@ const Button = ({ varient, size, type, handler, name, fullwidth, grouped, childr
   const { isLightTheme, light, dark } = useContext(ThemeContext)
   const theme = isLightTheme ? light : dark
 
-  let styles = {}
+  let styles = {
+    boxShadow: theme.shadow1
+  }
   let iconStyles = {
     marginRight: '7px'
   }
@@ -18,7 +20,7 @@ const Button = ({ varient, size, type, handler, name, fullwidth, grouped, childr
   } else if (varient === 'outline') {
     styles.color = theme.textColor
     styles.backgroundColor = theme.color1
-    styles.border = `1px solid ${theme.color3}`
+    styles.border = `1px solid ${theme.color2}`
   } else if (varient === 'normal') {
     styles.color = theme.textColor
     styles.backgroundColor = theme.color3

@@ -6,10 +6,10 @@ const NavBar = ({ children }) => {
   const { isLightTheme, light, dark } = useContext(ThemeContext)
   const theme = isLightTheme ? light : dark
 
-  const styles = {
+  let styles = {
     color: theme.textColor,
-    backgroundColor: theme.color1,
-    borderBottom: `1px solid ${theme.color3}`
+    backgroundColor: theme.hdColor,
+    borderBottom: `1px solid ${theme.color2}`
   }
 
   return (

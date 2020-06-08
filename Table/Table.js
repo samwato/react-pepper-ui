@@ -9,7 +9,8 @@ const Table = ({ title, columns, children, active, fullwidth }) => {
   const containerStyles = {
     color: theme.textColor,
     backgroundColor: theme.color1,
-    border: `1px solid ${theme.color3}`,
+    border: `1px solid ${theme.color2}`,
+    boxShadow: theme.shadow1,
     opacity: active ? '1' : '0.5'
   }
 

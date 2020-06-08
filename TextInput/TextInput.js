@@ -8,8 +8,9 @@ const TextInput = ({ required, label, placeholder, name, value, fullwidth, handl
 
   const inputStyles = {
     color: theme.textColor,
-    backgroundColor: theme.color2,
-    border: `1px solid ${theme.color3}`
+    backgroundColor: theme.color1,
+    border: `1px solid ${theme.color2}`,
+    boxShadow: theme.shadow1
   }
 
   let containerStyles = {}

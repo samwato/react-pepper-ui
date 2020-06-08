@@ -21,7 +21,9 @@ const DropdownLink = ({ varient, title, children }) => {
     }
   },[linkRef])
 
-  let buttonStyles = {}
+  let buttonStyles = {
+    boxShadow: theme.shadow1
+  }
 
   if (varient === 'secondary') {
     buttonStyles.color = theme.featureDark
@@ -30,7 +32,7 @@ const DropdownLink = ({ varient, title, children }) => {
   } else if (varient === 'outline') {
     buttonStyles.color = theme.textColor
     buttonStyles.backgroundColor = theme.color1
-    buttonStyles.border = `1px solid ${theme.color3}`
+    buttonStyles.border = `1px solid ${theme.color2}`
   } else if (varient === 'normal') {
     buttonStyles.color = theme.textColor
     buttonStyles.backgroundColor = theme.color3

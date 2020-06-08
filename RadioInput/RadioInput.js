@@ -47,7 +47,11 @@ const RadioInput = ({ required, fullwidth, checked, label, name, options, handle
               checked={isChecked}
             />
           <div
-              style={{ border: `1px solid ${theme.color3}`, backgroundColor: theme.color2 }}
+              style={{
+                border: `1px solid ${theme.color2}`,
+                backgroundColor: theme.color1,
+                boxShadow: theme.shadow1
+              }}
               className={css.checkmark}
             >
               { isChecked ? <img alt="" src={checkedIcon} height="22" /> : null }

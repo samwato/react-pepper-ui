@@ -10,7 +10,7 @@ const ContentContainer = ({ columns, children }) => {
 
   const styles = {
     color: theme.textColor,
-    backgroundColor: theme.color1,
+    backgroundColor: theme.bgColor,
     width: `${width}%`
   }
 
