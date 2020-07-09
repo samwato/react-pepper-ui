@@ -10,6 +10,7 @@ export { default as DropdownLink } from './DropdownLink/DropdownLink'
 /* Form Components */
 export { default as Form } from './Form/Form'
 export { default as TextInput } from './TextInput/TextInput'
+export { default as PasswordInput } from './PasswordInput/PasswordInput'
 export { default as SearchInput } from './SearchInput/SearchInput'
 export { default as TextArea } from './TextArea/TextArea'
 export { default as RadioInput } from './RadioInput/RadioInput'

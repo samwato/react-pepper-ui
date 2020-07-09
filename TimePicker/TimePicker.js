@@ -42,7 +42,7 @@ const TimePicker = ({ label, name, handlerChange, fullwidth, cleared }) => {
     if(selectedTime) {
       handlerChange(name, selectedTime)
     }
-  }, [selectedTime])
+  }, [selectedTime, handlerChange, name])
 
   useEffect(() => {
     if(cleared) setSelectedTime()

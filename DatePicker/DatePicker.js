@@ -48,7 +48,7 @@ const DatePicker = ({ label, name, handlerChange, fullwidth, cleared }) => {
     if(selectedDate) {
       handlerChange(name, selectedDate)
     }
-  }, [selectedDate])
+  }, [selectedDate, handlerChange, name])
 
   useEffect(() => {
     if(cleared) setSelectedDate()

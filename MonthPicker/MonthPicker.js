@@ -39,7 +39,7 @@ const MonthPicker = ({ label, name, handlerChange, fullwidth, cleared, defaultVa
     if(selectedMonth) {
       handlerChange(name, selectedMonth)
     }
-  }, [selectedMonth])
+  }, [selectedMonth, handlerChange, name])
 
   useEffect(() => {
     if(cleared) setSelectedMonth()

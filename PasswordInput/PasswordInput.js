@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
 import { ThemeContext } from '../ThemeContext'
-import css from './TextInput.module.css'
+import css from './PasswordInput.module.css'
 
-const TextInput = ({ required, label, placeholder, name, value, fullwidth, handleChange }) => {
+const PasswordInput = ({ required, label, placeholder, name, value, fullwidth, handleChange }) => {
   const { isLightTheme, light, dark } = useContext(ThemeContext)
   const theme = isLightTheme ? light : dark
 
@@ -22,11 +22,11 @@ const TextInput = ({ required, label, placeholder, name, value, fullwidth, handl
     <div className={css.container} style={containerStyles}>
       { label ? <label className={css.label}>{label}</label> : null }
       <input
-        autoComplete="username"
+        autoComplete="current-password"
         placeholder={ placeholder ? placeholder : null }
         style={inputStyles}
         className={css.input}
-        type="text"
+        type="password"
         name={name}
         value={ value ? value : '' }
         onChange={handleChange}
@@ -36,4 +36,4 @@ const TextInput = ({ required, label, placeholder, name, value, fullwidth, handl
   )
 }
 
-export default TextInput
+export default PasswordInput
