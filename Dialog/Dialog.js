@@ -38,6 +38,10 @@ const Dialog = ({ type, varient, title, children }) => {
     buttonStyles.color = theme.textColor
     buttonStyles.backgroundColor = theme.color3
     buttonStyles.border = `1px solid ${theme.color3}`
+  } else if (varient === 'error') {
+    buttonStyles.color = theme.errorDark
+    buttonStyles.backgroundColor = theme.errorLight
+    buttonStyles.border = `1px solid ${theme.errorDark}`
   } else {
     buttonStyles.backgroundColor = theme.featureDark
     buttonStyles.border = `1px solid ${theme.featureDark}`
@@ -47,13 +51,17 @@ const Dialog = ({ type, varient, title, children }) => {
     backgroundColor: theme.color1,
     border: `1px solid ${theme.color3}`
   }
+  let imgStyles = {}
+  if (title === undefined) {
+    imgStyles.marginRight = 0
+  }
 
   /* icons */
   const icons = {
     info: `data:image/svg+xml;utf8,
     <svg xmlns="http://www.w3.org/2000/svg"
       width="24" height="24" viewBox="0 0 24 24" fill="none"
-      stroke="${theme.iconColor}"
+      stroke="${buttonStyles.color}"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line>
     </svg>`
@@ -66,7 +74,7 @@ const Dialog = ({ type, varient, title, children }) => {
         style={buttonStyles}
         onClick={() => updateClicked(!clicked)}
       >
-      <img alt="" className={css.icon} src={icons[type]} />
+      <img style={imgStyles} alt="" className={css.icon} src={icons[type]} />
         {title}
       </div>
 
