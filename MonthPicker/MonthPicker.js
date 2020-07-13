@@ -33,13 +33,16 @@ const MonthPicker = ({ label, name, handlerChange, fullwidth, cleared, defaultVa
     setPopUp(false)
     setSelectedMonth(month)
   }
+  const handleChangeUpComponent = (name, selectedDate) => {
+    handlerChange(name, selectedDate)
+  }
 
   /* use effects - submit data to parent form when selectedDate state changes */
   useEffect(() => {
     if(selectedMonth) {
-      handlerChange(name, selectedMonth)
+      handleChangeUpComponent(name, selectedMonth)
     }
-  }, [selectedMonth, handlerChange, name])
+  }, [selectedMonth, name])
 
   useEffect(() => {
     if(cleared) setSelectedMonth()

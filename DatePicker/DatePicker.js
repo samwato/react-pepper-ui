@@ -42,13 +42,16 @@ const DatePicker = ({ label, name, handlerChange, fullwidth, cleared }) => {
     setPopUp(false)
     setSelectedDate(outputDate)
   }
+  const handleChangeUpComponent = (name, selectedDate) => {
+    handlerChange(name, selectedDate)
+  }
 
   /* use effects - submit data to parent form when selectedDate state changes */
   useEffect(() => {
     if(selectedDate) {
-      handlerChange(name, selectedDate)
+      handleChangeUpComponent(name, selectedDate)
     }
-  }, [selectedDate, handlerChange, name])
+  }, [selectedDate, name])
 
   useEffect(() => {
     if(cleared) setSelectedDate()

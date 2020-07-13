@@ -49,13 +49,16 @@ const YearPicker = ({ label, name, handlerChange, fullwidth, cleared, defaultVal
     if (name === 'previous') setWindowYear(moment(windowYear).subtract(count,'years').format('YYYY'))
     if (name === 'next') setWindowYear(moment(windowYear).add(count,'years').format('YYYY'))
   }
+  const handleChangeUpComponent = (name, selectedDate) => {
+    handlerChange(name, selectedDate)
+  }
 
   /* use effects - submit data to parent form when selectedDate state changes */
   useEffect(() => {
     if(selectedYear) {
-      handlerChange(name, selectedYear)
+      handleChangeUpComponent(name, selectedYear)
     }
-  }, [selectedYear])
+  }, [selectedYear, name])
 
   useEffect(() => {
     if(cleared) setSelectedYear()
