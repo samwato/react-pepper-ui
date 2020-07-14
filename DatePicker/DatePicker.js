@@ -30,11 +30,13 @@ const DatePicker = ({ label, name, handlerChange, fullwidth, cleared }) => {
   },[calendarRef])
 
   const handleMonthChange = (e) => {
+    e.preventDefault()
     const { name } = e.target
     if (name === 'previous') setWindowDate(moment(windowDate.subtract(1,'months')))
     if (name === 'next') setWindowDate(moment(windowDate.add(1,'months')))
   }
   const handleDateSelected = (e) => {
+    e.preventDefault()
     const year = windowDate.year()
     const month = windowDate.month()
     const date = e.target.name
@@ -67,29 +69,30 @@ const DatePicker = ({ label, name, handlerChange, fullwidth, cleared }) => {
   const monthNumbers = daysInMonthArray.map((item, i) => {
     if(item.disabled) {
       return (
-        <a
+        <button
           key={i} name={item.date}
-          className={`${css.calendar_item} ${css.calendar_item_disabled}`}>
+          className={`${css.calendar_item} ${css.calendar_item_disabled}`}
+          onClick={(e) => e.preventDefault()}>
           {item.date}
-        </a>
+        </button>
       )
     } else if (item.current) {
       return (
-        <a
+        <button
           key={i} name={item.date}
           style={{ backgroundColor: theme.featureDark, color: 'white', fontWeight: 'bold' }}
           className={css.calendar_item}
           onClick={handleDateSelected}>
           {item.date}
-        </a>)
+        </button>)
     } else {
       return (
-        <a
+        <button
           key={i} name={item.date}
           className={css.calendar_item}
           onClick={handleDateSelected}>
           {item.date}
-        </a>)
+        </button>)
     }
   })
 
@@ -133,11 +136,11 @@ const DatePicker = ({ label, name, handlerChange, fullwidth, cleared }) => {
             <span className={css.date_title}>{monthString}</span>
             <div className={css.arrow_container}>
               <div className={css.arrow_box}>
-                <a className={css.arrow_link} name="previous" onClick={handleMonthChange}></a>
+                <button className={css.arrow_link} name="previous" onClick={handleMonthChange}></button>
                 <img alt="" src={arrowLeftIcon}></img>
               </div>
               <div className={css.arrow_box}>
-                <a className={css.arrow_link} name="next" onClick={handleMonthChange}></a>
+                <button className={css.arrow_link} name="next" onClick={handleMonthChange}></button>
                 <img alt="" src={arrowRightIcon}></img>
               </div>
             </div>

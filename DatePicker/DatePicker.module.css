@@ -69,6 +69,11 @@
   bottom: 0;
   left: 0;
   right: 0;
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline:none;
 }
 
 .days_container {
@@ -92,9 +97,14 @@
 .calendar_item {
   text-decoration: none;
   text-align: center;
+  border: none;
   border-radius: 5px;
-  padding: 7px 0;
+  padding: 10px 0;
   display: block;
+  outline: none;
+  background: unset;
+  font-size: 0.8em;
+  font-weight: 400;
 }
 
 .calendar_item_disabled {

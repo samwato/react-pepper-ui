@@ -47,6 +47,8 @@
   width: 100%;
   padding: 6px;
   border-radius: 5px;
+  font-size: 0.9em;
+  font-weight: 400;
 }
 
 .years_item:hover {

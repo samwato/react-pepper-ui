@@ -46,8 +46,8 @@ const YearPicker = ({ label, name, handlerChange, fullwidth, cleared, defaultVal
 
   const handleYearChange = (e) => {
     const { name } = e.target
-    if (name === 'previous') setWindowYear(moment(windowYear).subtract(count,'years').format('YYYY'))
-    if (name === 'next') setWindowYear(moment(windowYear).add(count,'years').format('YYYY'))
+    if (name === 'previous') setWindowYear(moment().year(windowYear).subtract(count,'years').format('YYYY'))
+    if (name === 'next') setWindowYear(moment().year(windowYear).add(count,'years').format('YYYY'))
   }
   const handleChangeUpComponent = (name, selectedDate) => {
     handlerChange(name, selectedDate)

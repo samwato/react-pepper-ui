@@ -30,6 +30,7 @@ const TimePicker = ({ label, name, handlerChange, fullwidth, cleared }) => {
 
 
   const handleTimeSelected = (e) => {
+    e.preventDefault()
     const hour = e.target.getAttribute('hour')
     const minute = e.target.getAttribute('minute')
     const outputDate = moment().set({ 'hour': hour, 'minute': minute, 'second': 0 })
@@ -55,14 +56,14 @@ const TimePicker = ({ label, name, handlerChange, fullwidth, cleared }) => {
   const timesArray = buildTimes()
   const times = timesArray.map((item, i) => {
     return (
-      <a
+      <button
         key={i}
         hour={item.hour}
         minute={item.minute}
         className={css.times_item}
         onClick={handleTimeSelected}>
         {item.title}
-      </a>)
+      </button>)
   })
 
   const timeString = selectedTime ? selectedTime.format('HH:mm') : null

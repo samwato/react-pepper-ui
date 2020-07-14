@@ -29,6 +29,7 @@ const MonthPicker = ({ label, name, handlerChange, fullwidth, cleared, defaultVa
 
 
   const handleMonthSelected = (e) => {
+    e.preventDefault()
     const month = e.target.getAttribute('month')
     setPopUp(false)
     setSelectedMonth(month)
@@ -57,13 +58,13 @@ const MonthPicker = ({ label, name, handlerChange, fullwidth, cleared, defaultVa
   const monthArray = buildMonths()
   const months = monthArray.map((month, i) => {
     return (
-      <a
+      <button
         key={i}
         month={month}
         className={css.months_item}
         onClick={handleMonthSelected}>
         {month}
-      </a>)
+      </button>)
   })
 
   const monthString = selectedMonth ? selectedMonth : null
