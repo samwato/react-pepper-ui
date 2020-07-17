@@ -46,9 +46,12 @@
   text-align: center;
   width: 100%;
   padding: 6px;
+  border: none;
   border-radius: 5px;
   font-size: 0.9em;
   font-weight: 400;
+  background: unset;
+  outline: none;
 }
 
 .years_item:hover {

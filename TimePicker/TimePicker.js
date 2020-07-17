@@ -51,23 +51,8 @@ const TimePicker = ({ label, name, handlerChange, fullwidth, cleared }) => {
   useEffect(() => {
     if(cleared) setSelectedTime()
   },[cleared])
-
-
-  const timesArray = buildTimes()
-  const times = timesArray.map((item, i) => {
-    return (
-      <button
-        key={i}
-        hour={item.hour}
-        minute={item.minute}
-        className={css.times_item}
-        onClick={handleTimeSelected}>
-        {item.title}
-      </button>)
-  })
-
-  const timeString = selectedTime ? selectedTime.format('HH:mm') : null
-
+  
+  
   /* custom styles */
   const clockIcon = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="${theme.iconColor}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>`
   const inputStyles = {
@@ -83,6 +68,28 @@ const TimePicker = ({ label, name, handlerChange, fullwidth, cleared }) => {
   } else {
     containerStyles.margin = '0 10px'
   }
+  const buttonStyles = {
+    color: theme.textColor
+  }
+
+  /* buid */
+  const timesArray = buildTimes()
+  const times = timesArray.map((item, i) => {
+    return (
+      <button
+        key={i}
+        style={buttonStyles}
+        hour={item.hour}
+        minute={item.minute}
+        className={css.times_item}
+        onClick={handleTimeSelected}>
+        {item.title}
+      </button>)
+  })
+
+  const timeString = selectedTime ? selectedTime.format('HH:mm') : null
+
+  
 
   return (
     <div ref={timesRef} style={containerStyles} className={css.container}>

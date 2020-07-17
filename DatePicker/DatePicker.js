@@ -58,46 +58,7 @@ const DatePicker = ({ label, name, handlerChange, fullwidth, cleared }) => {
   useEffect(() => {
     if(cleared) setSelectedDate()
   },[cleared])
-
-
-  const daysArray = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat']
-  const days = daysArray.map(item => <span key={item} className={css.days_item}>{item}</span>)
-
-  const monthString = windowDate.format('MMMM YYYY')
-
-  const daysInMonthArray = buildCalendar(windowDate, selectedDate)
-  const monthNumbers = daysInMonthArray.map((item, i) => {
-    if(item.disabled) {
-      return (
-        <button
-          key={i} name={item.date}
-          className={`${css.calendar_item} ${css.calendar_item_disabled}`}
-          onClick={(e) => e.preventDefault()}>
-          {item.date}
-        </button>
-      )
-    } else if (item.current) {
-      return (
-        <button
-          key={i} name={item.date}
-          style={{ backgroundColor: theme.featureDark, color: 'white', fontWeight: 'bold' }}
-          className={css.calendar_item}
-          onClick={handleDateSelected}>
-          {item.date}
-        </button>)
-    } else {
-      return (
-        <button
-          key={i} name={item.date}
-          className={css.calendar_item}
-          onClick={handleDateSelected}>
-          {item.date}
-        </button>)
-    }
-  })
-
-  const dateString = selectedDate ? selectedDate.format('DD MMMM YYYY') : null
-
+  
   /* custom styles */
   const calendarIcon = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="${theme.iconColor}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>`
   const arrowLeftIcon = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="${theme.iconColor}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-left"><polyline points="15 18 9 12 15 6"></polyline></svg>`
@@ -115,6 +76,51 @@ const DatePicker = ({ label, name, handlerChange, fullwidth, cleared }) => {
   } else {
     containerStyles.margin = '0 10px'
   }
+  const buttonStyles = {
+    color: theme.textColor
+  }
+  
+
+  /* build numbers */
+  const daysArray = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat']
+  const days = daysArray.map(item => <span key={item} className={css.days_item}>{item}</span>)
+
+  const monthString = windowDate.format('MMMM YYYY')
+
+  const daysInMonthArray = buildCalendar(windowDate, selectedDate)
+  const monthNumbers = daysInMonthArray.map((item, i) => {
+    if(item.disabled) {
+      return (
+        <button
+          key={i} name={item.date} style={buttonStyles}
+          className={`${css.calendar_item} ${css.calendar_item_disabled}`}
+          onClick={(e) => e.preventDefault()}>
+          {item.date}
+        </button>
+      )
+    } else if (item.current) {
+      return (
+        <button
+          key={i} name={item.date} style={buttonStyles}
+          style={{ backgroundColor: theme.featureDark, color: 'white', fontWeight: 'bold' }}
+          className={css.calendar_item}
+          onClick={handleDateSelected}>
+          {item.date}
+        </button>)
+    } else {
+      return (
+        <button
+          key={i} name={item.date} style={buttonStyles}
+          className={css.calendar_item}
+          onClick={handleDateSelected}>
+          {item.date}
+        </button>)
+    }
+  })
+
+  const dateString = selectedDate ? selectedDate.format('DD MMMM YYYY') : null
+
+  
 
 
   return (
@@ -140,7 +146,7 @@ const DatePicker = ({ label, name, handlerChange, fullwidth, cleared }) => {
                 <img alt="" src={arrowLeftIcon}></img>
               </div>
               <div className={css.arrow_box}>
-                <button className={css.arrow_link} name="next" onClick={handleMonthChange}></button>
+                <button style={buttonStyles} className={css.arrow_link} name="next" onClick={handleMonthChange}></button>
                 <img alt="" src={arrowRightIcon}></img>
               </div>
             </div>
