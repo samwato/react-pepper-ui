@@ -2,9 +2,11 @@ import React, { useContext, useState, useEffect, useRef } from 'react'
 import { ThemeContext } from '../ThemeContext'
 import css from './DropdownLink.module.css'
 
-const DropdownLink = ({ varient, title, children }) => {
+const DropdownLink = ({ varient, title, children, minWidth }) => {
   const { isLightTheme, light, dark } = useContext(ThemeContext)
   const theme = isLightTheme ? light : dark
+  
+  console.log(children)
 
   /* user interactions */
   const [clicked, updateClicked] = useState(false)
@@ -47,6 +49,9 @@ const DropdownLink = ({ varient, title, children }) => {
     color: theme.textColor,
     backgroundColor: theme.color1,
     border: `1px solid ${theme.color3}`
+  }
+  if (minWidth !== undefined) {
+    dropdownStyles.minWidth = minWidth
   }
 
   const unClickedIcon = `data:image/svg+xml;utf8,
@@ -95,17 +100,24 @@ const DropdownLink = ({ varient, title, children }) => {
       {clicked ?
         <div
           style={dropdownStyles}
-          className={css.dropdown_container}>
-          {children.map((item, i) => (
-            <div
-              style={ i !== 0 ? { borderTop: `1px solid ${theme.color3}`} : null }
-              className={css.dropdown_item}
-              key={i}
-              onClick={item.props.onClick}
-            >
-              {item.props.children}
-            </div>
-          ))}
+          className={css.dropdown_container}
+          onClick={() => updateClicked(!clicked)}
+        >
+          {children}
+
+          {/*children.map((item, i) => {
+            console.log(item)
+            return (
+              <div
+                style={ i !== 0 ? { borderTop: `1px solid ${theme.color3}`} : null }
+                className={css.dropdown_item}
+                key={i}
+                {...item.props}
+              >
+                {item.props.children}
+              </div>
+            )
+          })*/}
         </div>
        : null }
 

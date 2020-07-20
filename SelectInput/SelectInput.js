@@ -30,8 +30,8 @@ const SelectInput = ({ required, label, options, name, value, fullwidth, handleC
         onChange={handleChange}
       >
       <option value=""></option>
-       {options.map(({ title, value }) => (
-         <option value={value}>{title}</option>
+       {options.map((item, i) => (
+         <option key={i} value={item.value}>{item.title}</option>
        ))}
       </select>
     </div>

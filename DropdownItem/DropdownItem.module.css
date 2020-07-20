@@ -1,0 +1,13 @@
+.dropdown_item {
+  height: 40px;
+  padding: 0 20px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  min-width: 100px;
+}
+
+.dropdown_item:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}

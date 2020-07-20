@@ -83,7 +83,6 @@ const YearPicker = ({ label, name, handlerChange, fullwidth, cleared, defaultVal
   const inputStyles = {
     color: theme.textColor,
     backgroundColor: theme.color1,
-    border: `1px solid ${theme.color2}`,
     boxShadow: theme.shadow1
   }
   const yearPickerContainerStyles = {
@@ -100,17 +99,27 @@ const YearPicker = ({ label, name, handlerChange, fullwidth, cleared, defaultVal
   if(grouped) {
     containerStyles.height = '100%'
     containerStyles.margin = '0'
+    inputStyles.borderRight = `1px solid ${theme.color2}`
+    inputStyles.borderLeft = `1px solid ${theme.color2}`
+    inputStyles.borderTop = `1px solid ${theme.color2}`
+    inputStyles.borderBottom = `1px solid ${theme.color2}`
   }
   if(grouped === 'left') {
     inputStyles.borderRadius = '10px 0 0 10px'
     inputStyles.borderRight = 'none'
+    inputStyles.borderLeft = `1px solid ${theme.color2}`
+    inputStyles.borderTop = `1px solid ${theme.color2}`
+    inputStyles.borderBottom = `1px solid ${theme.color2}`
   }
   if(grouped === 'middle') {
     inputStyles.borderRadius = '0'
   }
   if(grouped === 'right') {
     inputStyles.borderRadius = '0 10px 10px 0'
+    inputStyles.borderRight = `1px solid ${theme.color2}`
     inputStyles.borderLeft = 'none'
+    inputStyles.borderTop = `1px solid ${theme.color2}`
+    inputStyles.borderBottom = `1px solid ${theme.color2}`
   }
   const buttonStyles = {
     color: theme.textColor

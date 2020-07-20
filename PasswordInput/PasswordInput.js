@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { ThemeContext } from '../ThemeContext'
 import css from './PasswordInput.module.css'
 
-const PasswordInput = ({ required, label, placeholder, name, value, fullwidth, handleChange }) => {
+const PasswordInput = ({ required, autoComplete, label, placeholder, name, value, fullwidth, handleChange }) => {
   const { isLightTheme, light, dark } = useContext(ThemeContext)
   const theme = isLightTheme ? light : dark
 
@@ -22,7 +22,7 @@ const PasswordInput = ({ required, label, placeholder, name, value, fullwidth, h
     <div className={css.container} style={containerStyles}>
       { label ? <label className={css.label}>{label}</label> : null }
       <input
-        autoComplete="current-password"
+        autoComplete={autoComplete ? "current-password" : "new-password"}
         placeholder={ placeholder ? placeholder : null }
         style={inputStyles}
         className={css.input}

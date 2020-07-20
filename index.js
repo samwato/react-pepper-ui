@@ -6,6 +6,7 @@ export { default as NavSpacer } from './NavSpacer/NavSpacer'
 export { default as NavLink } from './NavLink/NavLink'
 export { default as NavFooter } from './NavFooter/NavFooter'
 export { default as DropdownLink } from './DropdownLink/DropdownLink'
+export { default as DropdownItem } from './DropdownItem/DropdownItem'
 
 /* Form Components */
 export { default as Form } from './Form/Form'
