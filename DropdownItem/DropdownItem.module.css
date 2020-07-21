@@ -10,4 +10,5 @@
 .dropdown_item:hover {
   opacity: 0.8;
   cursor: pointer;
+  background-color: rgba(0,0,0,0.05);
 }

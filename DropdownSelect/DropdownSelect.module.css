@@ -32,6 +32,7 @@
   flex-direction: column;
   text-align: left;
   z-index: 9;
+  padding: 10px 0;
 }
 
 .dropdown_item {
@@ -46,4 +47,5 @@
 .dropdown_item:hover {
   opacity: 0.8;
   cursor: pointer;
+  background-color: rgba(0,0,0,0.05);
 }

@@ -6,8 +6,6 @@ const DropdownLink = ({ varient, title, children, minWidth }) => {
   const { isLightTheme, light, dark } = useContext(ThemeContext)
   const theme = isLightTheme ? light : dark
   
-  console.log(children)
-
   /* user interactions */
   const [clicked, updateClicked] = useState(false)
   const handleClick = (e) => {

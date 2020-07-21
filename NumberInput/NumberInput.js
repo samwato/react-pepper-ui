@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { ThemeContext } from '../ThemeContext'
 import css from './NumberInput.module.css'
 
-const NumberInput = ({ required, label, name, value, fullwidth, handleChange }) => {
+const NumberInput = ({ required, label, prefix, name, value, fullwidth, handleChange }) => {
   const { isLightTheme, light, dark } = useContext(ThemeContext)
   const theme = isLightTheme ? light : dark
 
@@ -21,14 +21,18 @@ const NumberInput = ({ required, label, name, value, fullwidth, handleChange }) 
   return (
     <div className={css.container} style={containerStyles}>
       { label ? <label className={css.label}>{label}</label> : null }
-      <input
-        style={inputStyles}
-        className={css.input}
-        type="number"
-        name={name}
-        value={ value ? value : '' }
-        onChange={handleChange}
-      />
+      <div className={css.input_container}>
+        { prefix ? <div className={css.prefix}>{prefix}</div> : null }
+        <input
+          style={inputStyles}
+          className={css.input}
+          type="number"
+          name={name}
+          value={ value ? value : '' }
+          onChange={handleChange}
+        />
+      </div>
+      
     </div>
 
   )

@@ -1,8 +1,10 @@
 import React, { useRef, useContext, useState, useEffect } from 'react'
 import { ThemeContext } from '../ThemeContext'
 import css from './Dialog.module.css'
+import buildIcons from '../utils/buildIcons'
 
-const Dialog = ({ type, varient, title, children }) => {
+
+const Dialog = ({ type, size, varient, title, children, maxWidth, icon, handler }) => {
   /* Theme context */
   const { isLightTheme, light, dark } = useContext(ThemeContext)
   const theme = isLightTheme ? light : dark
@@ -49,34 +51,44 @@ const Dialog = ({ type, varient, title, children }) => {
   let dialogStyles = {
     color: theme.textColor,
     backgroundColor: theme.color1,
-    border: `1px solid ${theme.color3}`
+    border: `1px solid ${theme.color3}`,
   }
-  let imgStyles = {}
+  if (maxWidth !== undefined) {
+    dialogStyles.maxWidth = maxWidth
+  }
+  let iconStyles = {}
   if (title === undefined) {
-    imgStyles.marginRight = 0
+    iconStyles.marginRight = 0
+  }
+  
+  if(size === 'sm' || size === 'small') {
+    buttonStyles.fontSize = '0.85em'
+    buttonStyles.padding = '0px 17px'
+  } else {
+    buttonStyles.fontSize = '1em'
+    buttonStyles.padding = '0px 20px'
   }
 
+  
   /* icons */
-  const icons = {
-    info: `data:image/svg+xml;utf8,
-    <svg xmlns="http://www.w3.org/2000/svg"
-      width="24" height="24" viewBox="0 0 24 24" fill="none"
-      stroke="${buttonStyles.color}"
-      stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line>
-    </svg>`
-  }
+  const icons = buildIcons(buttonStyles.color)
+
 
   return (
     <div className={css.container}>
       <div
         className={css.button}
         style={buttonStyles}
-        onClick={() => updateClicked(!clicked)}
+        onClick={() => {
+          updateClicked(!clicked)
+          if (handler !== undefined) {
+            handler()
+          }
+        }}
       >
-      <img style={imgStyles} alt="" className={css.icon} src={icons[type]} />
-        {title}
-      </div>
+      { icon ? <img alt="" className={css.icon} style={iconStyles} src={icons[icon]} /> : null }
+      {title}
+    </div>
 
       {clicked ?
         <div className={css.dialog_container}>
@@ -85,7 +97,18 @@ const Dialog = ({ type, varient, title, children }) => {
             style={dialogStyles}
             className={css.dialog_item}
           >
-            {children}
+            <div className={css.dialog_content}>
+              <button
+                className={css.dialog_close}
+                onClick={() => {
+                  updateClicked(!clicked)
+                }}>
+                X
+              </button>
+                
+              {children}
+            </div>
+            
           </div>
         </div>
        : null }

@@ -17,3 +17,12 @@
   font-weight: 500;
   margin: 10px 0;
 }
+
+.input_container {
+  display: flex;
+  align-items: center;
+}
+
+.prefix {
+  margin-right: 10px;
+}

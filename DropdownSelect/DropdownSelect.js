@@ -102,7 +102,6 @@ const DropdownSelect = ({ varient, selected, prefix, options, handler, children 
           className={css.dropdown_container}>
           {options.map((item, i) => (
             <div
-              style={ i !== 0 ? { borderTop: `1px solid ${theme.color3}`} : null }
               className={css.dropdown_item}
               key={i}
               onClick={() => {

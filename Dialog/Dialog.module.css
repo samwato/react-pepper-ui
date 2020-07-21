@@ -38,10 +38,32 @@
 
 
 .dialog_item {
-  padding: 40px;
   border-radius: 10px;
+  position: relative;
+  max-height: 100vh;
+  overflow: auto;
 }
 
 .icon {
   margin-right: 7px;
+}
+
+.dialog_content {
+  padding: 40px;
+}
+
+.dialog_close {
+  outline: none;
+  border: none;
+  border-radius:10px;
+  padding: 8px 12px;
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  font-size: 0.9em;
+}
+
+.dialog_close:hover {
+  cursor: pointer;
+  background-color: rgba(0,0,0,0.1);
 }

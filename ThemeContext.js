@@ -3,6 +3,10 @@ import React, { createContext, useState } from 'react'
 export const ThemeContext = createContext()
 
 const ThemeContextProvider = ({ children }) => {
+  
+  const setLightTheme = (bool) => {
+    updateTheme({ ...theme, isLightTheme: bool})
+  }
 
   const switchTheme = () => {
     updateTheme({ ...theme, isLightTheme: !theme.isLightTheme})
@@ -28,11 +32,18 @@ const ThemeContextProvider = ({ children }) => {
       shadow1: '0px 4px 8px rgba(0, 0, 0, 0.03)'
     },
     dark: {
-      bgColor: 'rgb(27,31,35)',
-      hdColor: 'rgb(36,41,46)',
-      color1: 'rgb(36,41,46)',
-      color2: 'rgb(47, 54, 61)',
-      color3: 'rgb(68,77,86)',
+      // bgColor: 'rgb(27,31,35)',
+      // hdColor: 'rgb(36,41,46)',
+      // color1: 'rgb(36,41,46)',
+      // color2: 'rgb(47, 54, 61)',
+      // color3: 'rgb(68,77,86)',
+
+      bgColor: 'rgb(36,41,46)',
+      hdColor: 'rgb(45,51,57)',
+      color1: 'rgb(45,51,57)',
+      color2: 'rgb(55, 64, 72)',
+      color3: 'rgb(72,82,91)',
+      
       color4: 'rgb(167,172,178)',
       textColor: 'rgb(255,255,255)',
       iconColor: 'rgb(255,255,255)',
@@ -47,7 +58,7 @@ const ThemeContextProvider = ({ children }) => {
   })
 
   return (
-    <ThemeContext.Provider value={{ ...theme, switchTheme }}>
+    <ThemeContext.Provider value={{ ...theme, switchTheme, setLightTheme }}>
       {children}
     </ThemeContext.Provider>
   )
