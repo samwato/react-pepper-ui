@@ -9,7 +9,7 @@ const Table = ({ title, columns, children, active, fullwidth }) => {
   const containerStyles = {
     color: theme.textColor,
     backgroundColor: theme.color1,
-    border: `1px solid ${theme.color2}`,
+    border: `1px solid ${theme.color3}`,
     boxShadow: theme.shadow1,
     opacity: active ? '1' : '0.5'
   }
@@ -22,10 +22,18 @@ const Table = ({ title, columns, children, active, fullwidth }) => {
     containerStyles.width = '100%'
     containerStyles.borderRadius = '0px'
   }
+  
+  const tableTitleStyles = {
+    backgroundColor: theme.color1,
+    borderBottom: `1px solid ${theme.color2}`
+  }
 
   return (
     <div style={containerStyles} className={css.container}>
-      { title ? <h4 className={css.title}>{title}</h4> : null }
+      <div style={tableTitleStyles} className={css.table_title}>
+        { title ? <h4 className={css.title}>{title}</h4> : null }
+      </div>
+      
       <div style={tableStyles} className={css.table}>
         {children}
       </div>

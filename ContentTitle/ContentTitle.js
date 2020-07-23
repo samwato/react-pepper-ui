@@ -7,7 +7,7 @@ const ContentTitle = ({ children }) => {
   const theme = isLightTheme ? light : dark
 
   const styles = {
-    color: theme.color4
+    color: theme.textColor
   }
 
   return (

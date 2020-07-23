@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { ThemeContext } from '../ThemeContext'
 import css from './SelectInput.module.css'
 
-const SelectInput = ({ required, label, options, name, value, fullwidth, handleChange }) => {
+const SelectInput = ({ required, label, options, name, value, fullwidth, handleChange, disabled }) => {
   const { isLightTheme, light, dark } = useContext(ThemeContext)
   const theme = isLightTheme ? light : dark
 
@@ -21,19 +21,37 @@ const SelectInput = ({ required, label, options, name, value, fullwidth, handleC
   return (
     <div className={css.container} style={containerStyles}>
       { label ? <label className={css.label}>{label}</label> : null }
-      <select
-        style={inputStyles}
-        className={css.input}
-        type="text"
-        name={name}
-        value={ value ? value : '' }
-        onChange={handleChange}
-      >
-      <option value=""></option>
-       {options.map((item, i) => (
-         <option key={i} value={item.value}>{item.title}</option>
-       ))}
-      </select>
+      { disabled
+        ? 
+        <select
+          disabled
+          style={inputStyles}
+          className={css.input}
+          type="text"
+          name={name}
+          value={ value ? value : '' }
+          onChange={handleChange}
+        >
+        <option value=""></option>
+         {options.map((item, i) => (
+           <option key={i} value={item.value}>{item.title}</option>
+         ))}
+        </select>
+        :
+        <select
+          style={inputStyles}
+          className={css.input}
+          type="text"
+          name={name}
+          value={ value ? value : '' }
+          onChange={handleChange}
+        >
+        <option value=""></option>
+         {options.map((item, i) => (
+           <option key={i} value={item.value}>{item.title}</option>
+         ))}
+        </select>
+      }
     </div>
 
   )

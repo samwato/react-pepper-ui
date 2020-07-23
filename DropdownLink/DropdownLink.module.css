@@ -1,35 +1,13 @@
-.container {
-  position: relative;
-  margin: 0 10px;
-}
-
-.button {
-  border-radius: 10px;
-  padding: 0 20px;
-  font-size: 16px;
-  font-weight: 500;
-  outline: none;
-  height: 40px;
-  opacity: 1;
-  cursor: auto;
+.dropdown_item {
+  padding: 10px 20px;
   text-decoration: none;
   display: flex;
   align-items: center;
-  justify-content: center;
+  font-size: 0.9em;
 }
 
-.button:hover {
+.dropdown_item:hover {
   opacity: 0.8;
   cursor: pointer;
-}
-
-.dropdown_container {
-  position: absolute;
-  right: 0;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  z-index: 9;
-  padding: 10px 0;
+  background-color: rgba(0,0,0,0.05);
 }

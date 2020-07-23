@@ -11,6 +11,7 @@ const LogoTitle = ({ children }) => {
   }
 
   return (
+    
     <h1
       className={css.title}
       style={styles}

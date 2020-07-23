@@ -2,6 +2,7 @@ import React, { useState, useContext, useEffect, useRef } from 'react'
 import { ThemeContext } from '../ThemeContext'
 import css from './TimePicker.module.css'
 import moment from 'moment'
+import buildIcons from '../utils/buildIcons'
 
 import buildTimes from './buildTimes'
 
@@ -54,12 +55,13 @@ const TimePicker = ({ label, name, handlerChange, fullwidth, cleared }) => {
   
   
   /* custom styles */
-  const clockIcon = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="${theme.iconColor}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>`
+  const icons = buildIcons(theme.iconColor)
   const inputStyles = {
     color: theme.textColor,
     backgroundColor: theme.color1,
     border: `1px solid ${theme.color2}`,
-    boxShadow: theme.shadow1
+    boxShadow: theme.shadow1,
+    borderRadius: theme.borderRadius
   }
   const timePickerContainerStyles = inputStyles
   let containerStyles = {}
@@ -99,7 +101,7 @@ const TimePicker = ({ label, name, handlerChange, fullwidth, cleared }) => {
 
       {/* input */}
       <div style={inputStyles} className={css.input} onClick={() => setPopUp(!popUp)}>
-        <img alt="" className={css.icon} src={clockIcon} />
+        <img alt="" className={css.icon} src={icons.clock} />
         <span>{timeString}</span>
       </div>
 

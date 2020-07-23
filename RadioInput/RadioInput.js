@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { ThemeContext } from '../ThemeContext'
 import css from './RadioInput.module.css'
+import buildIcons from '../utils/buildIcons'
 
 const RadioInput = ({ required, fullwidth, checked, label, name, options, handleChange }) => {
   const { isLightTheme, light, dark } = useContext(ThemeContext)
@@ -12,13 +13,8 @@ const RadioInput = ({ required, fullwidth, checked, label, name, options, handle
     handleChange(e)
   }
 
-  const checkedIcon = `data:image/svg+xml;utf8,
-    <svg xmlns="http://www.w3.org/2000/svg"
-    width="24" height="24" viewBox="0 0 24 24" fill="none"
-    stroke="${theme.featureDark}" stroke-width="3" stroke-linecap="round"
-    stroke-linejoin="round">
-    <polyline points="20 6 9 17 4 12"></polyline></svg>
-  `
+  
+  const icons = buildIcons(theme.featureDark)
 
   let containerStyles = {}
   if(fullwidth) {
@@ -54,7 +50,7 @@ const RadioInput = ({ required, fullwidth, checked, label, name, options, handle
               }}
               className={css.checkmark}
             >
-              { isChecked ? <img alt="" src={checkedIcon} height="22" /> : null }
+              { isChecked ? <img alt="" src={icons.checkedIcon} height="22" /> : null }
             </div>
             <span className={css.title}>{option.title}</span>
           </div>

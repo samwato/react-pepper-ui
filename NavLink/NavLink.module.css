@@ -1,17 +1,16 @@
 .navlink {
-  border-radius: 10px;
   padding: 0 20px;
-  font-size: 16px;
+  font-size: 0.9em;
   font-weight: 500;
   outline: none;
   height: 40px;
   opacity: 1;
   cursor: auto;
-  margin: 0 10px;
   text-decoration: none;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
 }
 
 .navlink:hover {

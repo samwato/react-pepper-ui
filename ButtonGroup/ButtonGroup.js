@@ -1,9 +1,16 @@
 import React from 'react'
 import css from './ButtonGroup.module.css'
 
-const ButtonGroup = ({ children }) => {
+const ButtonGroup = ({ children, justifyContent, alignItems }) => {
+  let styles = {}
+  if (justifyContent !== undefined) {
+    styles.justifyContent = justifyContent
+  }
+  if (alignItems !== undefined) {
+    styles.alignItems = alignItems
+  }
   return (
-    <div className={css.group}>
+    <div style={styles} className={css.group}>
       {children}
     </div>
   )

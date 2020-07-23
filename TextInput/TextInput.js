@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { ThemeContext } from '../ThemeContext'
 import css from './TextInput.module.css'
 
-const TextInput = ({ required, autoComplete, label, placeholder, name, value, fullwidth, handleChange }) => {
+const TextInput = ({ required, autoComplete, label, placeholder, name, value, fullwidth, handleChange, disabled }) => {
   const { isLightTheme, light, dark } = useContext(ThemeContext)
   const theme = isLightTheme ? light : dark
 
@@ -10,7 +10,8 @@ const TextInput = ({ required, autoComplete, label, placeholder, name, value, fu
     color: theme.textColor,
     backgroundColor: theme.color1,
     border: `1px solid ${theme.color2}`,
-    boxShadow: theme.shadow1
+    boxShadow: theme.shadow1,
+    borderRadius: theme.borderRadius
   }
 
   let containerStyles = {}
@@ -21,16 +22,31 @@ const TextInput = ({ required, autoComplete, label, placeholder, name, value, fu
   return (
     <div className={css.container} style={containerStyles}>
       { label ? <label className={css.label}>{label}</label> : null }
-      <input
-        autoComplete={autoComplete ? "username" : "off"}
-        placeholder={ placeholder ? placeholder : null }
-        style={inputStyles}
-        className={css.input}
-        type="text"
-        name={name}
-        value={ value ? value : '' }
-        onChange={handleChange}
-      />
+      { disabled
+        ? 
+        <input
+          disabled
+          autoComplete={autoComplete ? "username" : "off"}
+          placeholder={ placeholder ? placeholder : null }
+          style={inputStyles}
+          className={css.input}
+          type="text"
+          name={name}
+          value={ value ? value : '' }
+          onChange={handleChange}
+        />
+        : 
+        <input
+          autoComplete={autoComplete ? "username" : "off"}
+          placeholder={ placeholder ? placeholder : null }
+          style={inputStyles}
+          className={css.input}
+          type="text"
+          name={name}
+          value={ value ? value : '' }
+          onChange={handleChange}
+        />
+    }
     </div>
 
   )

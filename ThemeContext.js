@@ -29,7 +29,8 @@ const ThemeContextProvider = ({ children }) => {
       successDark: 'rgb(96,196,128)',
       errorLight: 'rgba(224,44,84,0.1)',
       errorDark: 'rgb(224,44,84)',
-      shadow1: '0px 4px 8px rgba(0, 0, 0, 0.03)'
+      shadow1: '0px 4px 8px rgba(0, 0, 0, 0.03)',
+      borderRadius: '7px'
     },
     dark: {
       // bgColor: 'rgb(27,31,35)',
@@ -37,13 +38,11 @@ const ThemeContextProvider = ({ children }) => {
       // color1: 'rgb(36,41,46)',
       // color2: 'rgb(47, 54, 61)',
       // color3: 'rgb(68,77,86)',
-
       bgColor: 'rgb(36,41,46)',
       hdColor: 'rgb(45,51,57)',
       color1: 'rgb(45,51,57)',
       color2: 'rgb(55, 64, 72)',
       color3: 'rgb(72,82,91)',
-      
       color4: 'rgb(167,172,178)',
       textColor: 'rgb(255,255,255)',
       iconColor: 'rgb(255,255,255)',
@@ -53,7 +52,8 @@ const ThemeContextProvider = ({ children }) => {
       successDark: 'rgb(96,196,128)',
       errorLight: 'rgba(224,44,84,0.1)',
       errorDark: 'rgb(224,44,84)',
-      shadow1: '0px 4px 8px rgba(0, 0, 0, 0.05)'
+      shadow1: '0px 4px 8px rgba(0, 0, 0, 0.05)',
+      borderRadius: '7px'
     }
   })
 

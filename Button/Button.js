@@ -8,7 +8,8 @@ const Button = ({ varient, size, type, handler, name, fullwidth, grouped, childr
   const theme = isLightTheme ? light : dark
 
   let styles = {
-    boxShadow: theme.shadow1
+    boxShadow: theme.shadow1,
+    borderRadius: theme.borderRadius
   }
   let iconStyles = {
     marginRight: '7px'
@@ -41,18 +42,17 @@ const Button = ({ varient, size, type, handler, name, fullwidth, grouped, childr
   }
 
   if(size === 'sm' || size === 'small') {
-    styles.fontSize = '0.85em'
-    styles.padding = '7px 17px'
-    iconStyles.height = '18px'
+    styles.fontSize = '12px'
+    styles.padding = '5px 15px'
+    iconStyles.height = '15px'
+    styles.height = '32px'
   } else {
-    styles.fontSize = '1em'
+    styles.fontSize = '14px'
     styles.padding = '10px 20px'
+    styles.height = '40px'
   }
 
-  if(grouped) {
-    styles.height = '100%'
-    styles.margin = '0'
-  }
+
   if(grouped === 'left') {
     styles.borderRadius = '10px 0 0 10px'
     styles.borderRight = 'none'
@@ -68,6 +68,10 @@ const Button = ({ varient, size, type, handler, name, fullwidth, grouped, childr
   if(!children) {
     iconStyles.marginRight = '0px'
     styles.padding = '10px'
+  }
+  
+  if(fullwidth) {
+    styles.width = '100%'
   }
 
 
