@@ -5,9 +5,9 @@
 .input {
   cursor: pointer;
   width: 100%;
-  padding: 12px 20px;
+  padding: 10px 20px;
   outline: none;
-  font-size: 1em;
+  font-size: 14px;
   width: 100%;
   box-sizing: border-box;
   display: flex;
