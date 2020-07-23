@@ -10,7 +10,8 @@ const PasswordInput = ({ required, autoComplete, label, placeholder, name, value
     color: theme.textColor,
     backgroundColor: theme.color1,
     border: `1px solid ${theme.color2}`,
-    boxShadow: theme.shadow1
+    boxShadow: theme.shadow1,
+    borderRadius: theme.borderRadius
   }
 
   let containerStyles = {}

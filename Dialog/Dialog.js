@@ -76,12 +76,13 @@ const Dialog = ({ size, varient, buttonText, headerText, children, maxWidth, ico
   }
   
   if(size === 'sm' || size === 'small') {
-    buttonStyles.fontSize = '0.8em'
-    buttonStyles.padding = '0px 17px'
-    buttonStyles.height = '35px'
+    buttonStyles.fontSize = '12px'
+    buttonStyles.padding = '5px 15px'
+    iconStyles.height = '15px'
+    buttonStyles.height = '32px'
   } else {
-    buttonStyles.fontSize = '0.9em'
-    buttonStyles.padding = '0px 20px'
+    buttonStyles.fontSize = '14px'
+    buttonStyles.padding = '10px 20px'
     buttonStyles.height = '40px'
   }
   

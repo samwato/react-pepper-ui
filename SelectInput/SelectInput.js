@@ -10,7 +10,8 @@ const SelectInput = ({ required, label, options, name, value, fullwidth, handleC
     color: theme.textColor,
     backgroundColor: theme.color1,
     border: `1px solid ${theme.color2}`,
-    boxShadow: theme.shadow1
+    boxShadow: theme.shadow1,
+    borderRadius: theme.borderRadius
   }
 
   let containerStyles = {}

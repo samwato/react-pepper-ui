@@ -3,7 +3,6 @@ import { ThemeContext } from '../ThemeContext'
 import css from './DatePicker.module.css'
 import moment from 'moment'
 import buildIcons from '../utils/buildIcons'
-
 import buildCalendar from './buildCalendar'
 
 const DatePicker = ({ label, name, handlerChange, fullwidth, cleared }) => {

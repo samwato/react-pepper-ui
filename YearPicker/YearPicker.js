@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect, useRef } from 'react'
 import { ThemeContext } from '../ThemeContext'
 import css from './YearPicker.module.css'
 import moment from 'moment'
-
+import buildIcons from '../utils/buildIcons'
 import buildYears from './buildYears'
 
 const YearPicker = ({ label, name, handlerChange, fullwidth, cleared, defaultValue, hideIcon, displayCount, grouped }) => {
@@ -76,14 +76,13 @@ const YearPicker = ({ label, name, handlerChange, fullwidth, cleared, defaultVal
   
   
   /* custom styles */
-  const calendarIcon = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="${theme.iconColor}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>`
-  const arrowLeftIcon = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="${theme.iconColor}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-left"><polyline points="15 18 9 12 15 6"></polyline></svg>`
-  const arrowRightIcon = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="${theme.iconColor}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"></polyline></svg>`
+  const icons = buildIcons(theme.iconColor)
 
   const inputStyles = {
     color: theme.textColor,
     backgroundColor: theme.color1,
-    boxShadow: theme.shadow1
+    boxShadow: theme.shadow1,
+    borderRadius: theme.borderRadius
   }
   const yearPickerContainerStyles = {
     color: theme.textColor,
@@ -150,7 +149,7 @@ const YearPicker = ({ label, name, handlerChange, fullwidth, cleared, defaultVal
 
       {/* input */}
       <div style={inputStyles} className={css.input} onClick={() => setPopUp(!popUp)}>
-        { hideIcon ? null : <img alt="" className={css.icon} src={calendarIcon} /> }
+        { hideIcon ? null : <img alt="" className={css.icon} src={icons.calendar} /> }
         <span>{yearString}</span>
       </div>
 
@@ -162,11 +161,11 @@ const YearPicker = ({ label, name, handlerChange, fullwidth, cleared, defaultVal
           <div className={css.arrow_container}>
             <div className={css.arrow_box}>
               <a className={css.arrow_link} name="previous" onClick={handleYearChange}></a>
-              <img alt="" src={arrowLeftIcon}></img>
+              <img alt="" src={icons['chevron-left']}></img>
             </div>
             <div className={css.arrow_box}>
               <a className={css.arrow_link} name="next" onClick={handleYearChange}></a>
-              <img alt="" src={arrowRightIcon}></img>
+              <img alt="" src={icons['chevron-right']}></img>
             </div>
           </div>
 

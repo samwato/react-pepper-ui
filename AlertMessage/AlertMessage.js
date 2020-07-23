@@ -19,16 +19,12 @@ const AlertMessage = ({ type, children, fullwidth, closeHandler, active }) => {
 
   if(type === 'success') {
     icon = 'check-circle'
-    styles = { 
-      backgroundColor: theme.successDark,
-    }
+    styles.backgroundColor = theme.successDark
   }
   
   if(type === 'error') {
     icon = 'info'
-    styles = {
-      backgroundColor: theme.errorDark,
-    }
+    styles.backgroundColor = theme.errorDark
   }
   
   if(fullwidth) {
@@ -37,31 +33,27 @@ const AlertMessage = ({ type, children, fullwidth, closeHandler, active }) => {
   
   const icons = buildIcons(iconColor)
   
-  if (!active) {
-    return null
-  } else {
-    return (
-      <div style={styles} className={css.message_container}>
-      
-        <div className={css.message_icon_container}>
-          <img alt="" className={css.message_icon} src={icons[icon]} />
-        </div>
-        
-        <div className={css.message_content}>
-          {children}
-        </div>
-        
-        <div className={css.message_close_container}>
-          <button
-            className={css.message_close_button}
-            onClick={closeHandler}>
-            <img alt="" className={css.close_icon} src={icons['x']} />
-          </button>
-        </div>
-      
+  return (
+    <div style={styles} className={css.message_container}>
+    
+      <div className={css.message_icon_container}>
+        <img alt="" className={css.message_icon} src={icons[icon]} />
       </div>
-    )
-  }
+      
+      <div className={css.message_content}>
+        {children}
+      </div>
+      
+      <div className={css.message_close_container}>
+        <button
+          className={css.message_close_button}
+          onClick={closeHandler}>
+          <img alt="" className={css.close_icon} src={icons['x']} />
+        </button>
+      </div>
+    
+    </div>
+  )
 }
 
 export default AlertMessage
