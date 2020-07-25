@@ -27,6 +27,7 @@ export { default as FormGroup } from './FormGroup/FormGroup'
 export { default as Spacer } from './Spacer/Spacer'
 export { default as ButtonGroup } from './ButtonGroup/ButtonGroup'
 export { default as ButtonSpacer } from './ButtonSpacer/ButtonSpacer'
+export { default as RefreshButton } from './RefreshButton/RefreshButton'
 
 /* Layout Components */
 export { default as Dashboard } from './Dashboard/Dashboard'

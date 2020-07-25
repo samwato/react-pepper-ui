@@ -101,6 +101,12 @@ const Dialog = ({ size, varient, buttonText, headerText, children, maxWidth, ico
     buttonStyles.marginRight = '10px'
     buttonStyles.marginLeft = '10px'
   }
+  
+  const dialogContainerStyles = {
+    opacity: clicked ? '1' : '0',
+    visibility: clicked ? 'visible' : 'hidden',
+    transition: `opacity 225ms ${theme.transition} 0ms`
+  }
 
   
   /* icons */
@@ -123,8 +129,7 @@ const Dialog = ({ size, varient, buttonText, headerText, children, maxWidth, ico
         {buttonText}
       </button>
 
-      {clicked ?
-        <div className={css.dialog_container}>
+        <div style={dialogContainerStyles} className={css.dialog_container}>
           <div
             ref={dialogRef}
             style={dialogStyles}
@@ -148,7 +153,6 @@ const Dialog = ({ size, varient, buttonText, headerText, children, maxWidth, ico
             
           </div>
         </div>
-       : null }
 
     </div>
 
