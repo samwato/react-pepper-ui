@@ -3,7 +3,7 @@ import { ThemeContext } from '../ThemeContext'
 import css from './Dropdown.module.css'
 import buildIcons from '../utils/buildIcons'
 
-const Dropdown = ({ varient, title, children, minWidth, grouped }) => {
+const Dropdown = ({ varient, title, children, minWidth, grouped, prefix }) => {
   const { isLightTheme, light, dark } = useContext(ThemeContext)
   const theme = isLightTheme ? light : dark
     
@@ -83,7 +83,8 @@ const Dropdown = ({ varient, title, children, minWidth, grouped }) => {
         style={buttonStyles}
         onClick={() => updateClicked(!clicked)}
       >
-        {title}
+        <span style={{fontWeight: '400'}}>{prefix}</span>
+        <span>{title}</span>
         <img
           alt=""
           className={css.icon}

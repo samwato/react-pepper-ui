@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { ThemeContext } from '../ThemeContext'
 import css from './TableCell.module.css'
 
-const TableCell = ({ children }) => {
+const TableCell = ({ children, prefix, suffix }) => {
   const { isLightTheme, light, dark } = useContext(ThemeContext)
   const theme = isLightTheme ? light : dark
 
@@ -13,7 +13,7 @@ const TableCell = ({ children }) => {
 
   return (
     <div style={containerStyles} className={css.container}>
-      {children}
+      {prefix}{children}{suffix}
     </div>
   )
 }
