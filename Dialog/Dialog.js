@@ -39,6 +39,9 @@ const Dialog = ({ size, varient, buttonText, headerText, children, maxWidth, ico
     borderRadius: theme.borderRadius
   }
   
+  let iconColor
+  
+  
   if (varient === 'secondary') {
     buttonStyles.color = theme.featureDark
     buttonStyles.backgroundColor = theme.featureLight
@@ -52,13 +55,15 @@ const Dialog = ({ size, varient, buttonText, headerText, children, maxWidth, ico
     buttonStyles.backgroundColor = theme.color3
     buttonStyles.border = `1px solid ${theme.color3}`
   } else if (varient === 'error') {
-    buttonStyles.color = theme.errorDark
-    buttonStyles.backgroundColor = theme.errorLight
+    buttonStyles.color = 'white'
+    buttonStyles.backgroundColor = theme.errorDark
     buttonStyles.border = `1px solid ${theme.errorDark}`
+    iconColor = 'white'
   } else {
     buttonStyles.color = 'white'
     buttonStyles.backgroundColor = theme.featureDark
     buttonStyles.border = `1px solid ${theme.featureDark}`
+    iconColor = theme.textColor
   }
   
   let dialogStyles = {
@@ -107,12 +112,12 @@ const Dialog = ({ size, varient, buttonText, headerText, children, maxWidth, ico
     visibility: clicked ? 'visible' : 'hidden',
     transition: `opacity 225ms ${theme.transition} 0ms`
   }
-
   
   /* icons */
-  const icons = buildIcons(theme.textColor)
+  const selectedIcon = buildIcons(iconColor)[icon]
+  const closeIcon = buildIcons(theme.textColor)['x']
 
-
+  
   return (
     <div className={css.container}>
       <button
@@ -125,7 +130,7 @@ const Dialog = ({ size, varient, buttonText, headerText, children, maxWidth, ico
           }
         }}
       >
-        { icon ? <img alt="" className={css.icon} style={iconStyles} src={icons[icon]} /> : null }
+        { icon ? <img alt="" className={css.icon} style={iconStyles} src={selectedIcon} /> : null }
         {buttonText}
       </button>
 
@@ -142,7 +147,7 @@ const Dialog = ({ size, varient, buttonText, headerText, children, maxWidth, ico
                 onClick={() => {
                   updateClicked(!clicked)
                 }}>
-                <img alt="" className={css.close_icon} src={icons['x']} />
+                <img alt="" className={css.close_icon} src={closeIcon} />
               </button>
             </div>
             <div className={css.dialog_content}>
