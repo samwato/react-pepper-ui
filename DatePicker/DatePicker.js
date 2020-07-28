@@ -5,14 +5,14 @@ import moment from 'moment'
 import buildIcons from '../utils/buildIcons'
 import buildCalendar from './buildCalendar'
 
-const DatePicker = ({ label, name, handlerChange, fullwidth, cleared }) => {
+const DatePicker = ({ label, name, handlerChange, fullwidth, cleared, grouped, size, open, value, icon }) => {
   /* theme context */
   const { isLightTheme, light, dark } = useContext(ThemeContext)
   const theme = isLightTheme ? light : dark
 
   /* states */
   const [windowDate, setWindowDate] = useState(moment())
-  const [selectedDate, setSelectedDate] = useState()
+  // const [selectedDate, setSelectedDate] = useState(value)
   const [popUp, setPopUp] = useState(false)
 
   /* handler functions */
@@ -42,22 +42,23 @@ const DatePicker = ({ label, name, handlerChange, fullwidth, cleared }) => {
     const date = e.target.name
     const outputDate = moment().set({ 'year': year, 'month': month, 'date': date })
     setPopUp(false)
-    setSelectedDate(outputDate)
+    handlerChange(name, outputDate)
   }
-  const handleChangeUpComponent = (name, selectedDate) => {
-    handlerChange(name, selectedDate)
-  }
+  // const handleChangeUpComponent = (name, selectedDate) => {
+  //   handlerChange(name, selectedDate)
+  // }
 
   /* use effects - submit data to parent form when selectedDate state changes */
-  useEffect(() => {
-    if(selectedDate) {
-      handleChangeUpComponent(name, selectedDate)
-    }
-  }, [selectedDate, name])
+  // useEffect(() => {
+  //   if(selectedDate) {
+  //     handleChangeUpComponent(name, selectedDate)
+  //   }
+  // }, [selectedDate, name])
 
-  useEffect(() => {
-    if(cleared) setSelectedDate()
-  },[cleared])
+  // useEffect(() => {
+  //   if(cleared) setSelectedDate()
+  // },[cleared])
+  
   
   /* custom styles */
   const icons = buildIcons(theme.iconColor)
@@ -69,7 +70,13 @@ const DatePicker = ({ label, name, handlerChange, fullwidth, cleared }) => {
     boxShadow: theme.shadow1,
     borderRadius: theme.borderRadius
   }
-  const datePickerContainerStyles = inputStyles
+  const datePickerContainerStyles = {
+    color: theme.textColor,
+    backgroundColor: theme.color1,
+    border: `1px solid ${theme.color2}`,
+    boxShadow: theme.shadow1,
+    borderRadius: theme.borderRadius
+  }
   let containerStyles = {}
   if(fullwidth) {
     containerStyles.width = '100%'
@@ -79,6 +86,43 @@ const DatePicker = ({ label, name, handlerChange, fullwidth, cleared }) => {
   const buttonStyles = {
     color: theme.textColor
   }
+  let iconStyles = {
+    marginRight: '7px'
+  }
+  if(size === 'sm' || size === 'small') {
+    inputStyles.fontSize = '12px'
+    inputStyles.padding = '5px 15px'
+    inputStyles.height = '32px'
+    iconStyles.height = '15px'
+  } else {
+    inputStyles.fontSize = '14px'
+    inputStyles.padding = '10px 20px'
+    inputStyles.height = '40px'
+    iconStyles.height = '20px'
+  }
+  
+  if(!icon) {
+    iconStyles.marginRight = '0px'
+  }
+  
+  if(grouped === 'left') {
+    inputStyles.borderRadius = '10px 0 0 10px'
+    inputStyles.borderRight = 'none'
+    containerStyles.margin = '0'
+  }
+  if(grouped === 'middle') {
+    inputStyles.borderRadius = '0'
+    containerStyles.margin = '0'
+    inputStyles.borderRight = 'none'
+  }
+  if(grouped === 'right') {
+    inputStyles.borderRadius = '0 10px 10px 0'
+    containerStyles.margin = '0'
+  }
+  
+  if (open === 'left') {
+    datePickerContainerStyles.right = '0'
+  }
   
 
   /* build numbers */
@@ -87,7 +131,7 @@ const DatePicker = ({ label, name, handlerChange, fullwidth, cleared }) => {
 
   const monthString = windowDate.format('MMMM YYYY')
 
-  const daysInMonthArray = buildCalendar(windowDate, selectedDate)
+  const daysInMonthArray = buildCalendar(windowDate, value)
   const monthNumbers = daysInMonthArray.map((item, i) => {
     if(item.disabled) {
       return (
@@ -118,7 +162,7 @@ const DatePicker = ({ label, name, handlerChange, fullwidth, cleared }) => {
     }
   })
 
-  const dateString = selectedDate ? selectedDate.format('DD MMMM YYYY') : null
+  const dateString = value ? value.format('DD MMMM YYYY') : null
 
   
 
@@ -131,7 +175,7 @@ const DatePicker = ({ label, name, handlerChange, fullwidth, cleared }) => {
 
       {/* input */}
       <div style={inputStyles} className={css.input} onClick={() => setPopUp(!popUp)}>
-        <img alt="" className={css.icon} src={icons.calendar} />
+        <img alt="" style={iconStyles} className={css.icon} src={icons[icon]} />
         <span>{dateString}</span>
       </div>
 

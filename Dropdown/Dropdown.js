@@ -62,15 +62,16 @@ const Dropdown = ({ varient, title, children, minWidth, grouped, prefix }) => {
     dropdownStyles.minWidth = minWidth
   }
   
-  if (grouped === 'left') {
-    buttonStyles.marginRight = '10px'
+  if(grouped === 'left') {
+    buttonStyles.borderRadius = '10px 0 0 10px'
+    buttonStyles.borderRight = 'none'
   }
-  if (grouped === 'right') {
-    buttonStyles.marginLeft = '10px'
+  if(grouped === 'middle') {
+    buttonStyles.borderRadius = '0'
   }
-  if (grouped === 'middle') {
-    buttonStyles.marginRight = '10px'
-    buttonStyles.marginLeft = '10px'
+  if(grouped === 'right') {
+    buttonStyles.borderRadius = '0 10px 10px 0'
+    buttonStyles.borderLeft = 'none'
   }
   
   /* icons */

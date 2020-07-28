@@ -3,7 +3,7 @@ import { ThemeContext } from '../ThemeContext'
 import css from './Button.module.css'
 import buildIcons from '../utils/buildIcons'
 
-const Button = ({ varient, size, type, handler, name, fullwidth, grouped, children, icon }) => {
+const Button = ({ varient, size, type, handler, name, fullwidth, grouped, children, icon, disabled }) => {
   const { isLightTheme, light, dark } = useContext(ThemeContext)
   const theme = isLightTheme ? light : dark
 
@@ -48,6 +48,7 @@ const Button = ({ varient, size, type, handler, name, fullwidth, grouped, childr
     styles.height = '32px'
   } else {
     styles.fontSize = '14px'
+    iconStyles.height = '20px'
     styles.padding = '10px 20px'
     styles.height = '40px'
   }
@@ -59,19 +60,22 @@ const Button = ({ varient, size, type, handler, name, fullwidth, grouped, childr
   }
   if(grouped === 'middle') {
     styles.borderRadius = '0'
+    styles.borderRight = 'none'
   }
   if(grouped === 'right') {
     styles.borderRadius = '0 10px 10px 0'
-    styles.borderLeft = 'none'
   }
 
-  if(!children) {
+  if(!children || !icon) {
     iconStyles.marginRight = '0px'
     styles.padding = '10px'
   }
   
   if(fullwidth) {
     styles.width = '100%'
+  }
+  if(disabled) {
+    styles.cursor = 'default'
   }
 
 
