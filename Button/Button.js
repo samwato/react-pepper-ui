@@ -66,9 +66,13 @@ const Button = ({ varient, size, type, handler, name, fullwidth, grouped, childr
     styles.borderRadius = '0 10px 10px 0'
   }
 
-  if(!children || !icon) {
+  if(!children) {
     iconStyles.marginRight = '0px'
     styles.padding = '10px'
+  }
+  if(!icon) {
+    iconStyles.marginRight = '0px'
+    styles.padding = '10px 20px'
   }
   
   if(fullwidth) {
