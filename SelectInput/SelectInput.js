@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { ThemeContext } from '../ThemeContext'
 import css from './SelectInput.module.css'
 
-const SelectInput = ({ required, label, options, name, value, fullwidth, handleChange, disabled }) => {
+const SelectInput = ({ required, label, options, name, value, fullwidth, handleChange, disabled, minWidth }) => {
   const { isLightTheme, light, dark } = useContext(ThemeContext)
   const theme = isLightTheme ? light : dark
 
@@ -17,6 +17,9 @@ const SelectInput = ({ required, label, options, name, value, fullwidth, handleC
   let containerStyles = {}
   if(fullwidth) {
     containerStyles.width = '100%'
+  }
+  if(minWidth) {
+    containerStyles.width = minWidth
   }
 
   return (
