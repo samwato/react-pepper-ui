@@ -1,0 +1,99 @@
+.container {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.date_picker_container {
+  padding: 15px;
+  border-radius: 10px;
+  z-index: 9;
+}
+
+.date_selection_container {
+  width: 100%;
+  font-size: 1.4em;
+  padding-bottom: 12px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.arrow_container {
+  display: flex;
+}
+
+.arrow_box {
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.arrow_box:hover {
+  opacity: 0.8;
+  background-color: rgba(0,0,0,0.1);
+  cursor: pointer;
+}
+.arrow_link {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline:none;
+}
+
+.days_container {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  padding-bottom: 12px;
+}
+
+.days_item {
+  font-size: 12px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.calendar_container {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+}
+
+.calendar_item {
+  text-decoration: none;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 0;
+  display: block;
+  outline: none;
+  background: unset;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.calendar_item_disabled {
+  cursor: default;
+  opacity: 0.4;
+}
+.calendar_item:hover {
+  background-color: rgba(0,0,0,0.1);
+  font-weight: 900;
+  cursor: pointer;
+}
+.calendar_item_disabled:hover {
+  opacity: 0.4;
+  background: none;
+  font-weight: normal;
+}
