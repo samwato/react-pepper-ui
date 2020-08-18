@@ -29,7 +29,7 @@ const Dialog = ({ size, varient, buttonText, headerText, children, maxWidth, ico
   // pass in bool to trigger a switch in clicked
   useEffect(() => {
     if (dialogOverride !== undefined && dialogOverride !== null) {
-      updateClicked(!clicked)
+      updateClicked(c => !c)
     }
   }, [dialogOverride])
 

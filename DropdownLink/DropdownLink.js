@@ -1,10 +1,7 @@
-import React, { useContext } from 'react'
-import { ThemeContext } from '../ThemeContext'
+import React from 'react'
 import css from './DropdownLink.module.css'
 
 const DropdownLink = ({ children, name, value, handler }) => {
-  const { isLightTheme, light, dark } = useContext(ThemeContext)
-  const theme = isLightTheme ? light : dark
   
   return (
     <div

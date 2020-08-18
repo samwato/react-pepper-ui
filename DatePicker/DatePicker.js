@@ -145,7 +145,7 @@ const DatePicker = ({ label, name, handlerChange, fullwidth, cleared, grouped, s
     } else if (item.current) {
       return (
         <button
-          key={i} name={item.date} style={buttonStyles}
+          key={i} name={item.date}
           style={{ backgroundColor: theme.featureDark, color: 'white', fontWeight: 'bold' }}
           className={css.calendar_item}
           onClick={handleDateSelected}>

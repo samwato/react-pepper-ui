@@ -49,16 +49,14 @@ const YearPicker = ({ label, name, handlerChange, fullwidth, cleared, defaultVal
     if (name === 'previous') setWindowYear(moment().year(windowYear).subtract(count,'years').format('YYYY'))
     if (name === 'next') setWindowYear(moment().year(windowYear).add(count,'years').format('YYYY'))
   }
-  const handleChangeUpComponent = (name, selectedDate) => {
-    handlerChange(name, selectedDate)
-  }
 
   /* use effects - submit data to parent form when selectedDate state changes */
+  /* handlerChange must be a useCallback */
   useEffect(() => {
     if(selectedYear) {
-      handleChangeUpComponent(name, selectedYear)
+      handlerChange(name, selectedYear)
     }
-  }, [selectedYear, name])
+  }, [name, selectedYear, handlerChange])
 
   useEffect(() => {
     if(cleared) setSelectedYear()
@@ -72,7 +70,7 @@ const YearPicker = ({ label, name, handlerChange, fullwidth, cleared, defaultVal
     } else {
       setWindowYear(moment())
     }
-  },[])
+  },[defaultValue])
   
   
   /* custom styles */
@@ -160,11 +158,11 @@ const YearPicker = ({ label, name, handlerChange, fullwidth, cleared, defaultVal
 
           <div className={css.arrow_container}>
             <div className={css.arrow_box}>
-              <a className={css.arrow_link} name="previous" onClick={handleYearChange}></a>
+              <button className={css.arrow_link} name="previous" onClick={handleYearChange}></button>
               <img alt="" src={icons['chevron-left']}></img>
             </div>
             <div className={css.arrow_box}>
-              <a className={css.arrow_link} name="next" onClick={handleYearChange}></a>
+              <button className={css.arrow_link} name="next" onClick={handleYearChange}></button>
               <img alt="" src={icons['chevron-right']}></img>
             </div>
           </div>

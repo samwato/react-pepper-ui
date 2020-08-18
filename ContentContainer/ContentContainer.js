@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { ThemeContext } from '../ThemeContext'
 import css from './ContentContainer.module.css'
 
-const ContentContainer = ({ columns, children }) => {
+const ContentContainer = ({ columns, children, maxWidth }) => {
   const { isLightTheme, light, dark } = useContext(ThemeContext)
   const theme = isLightTheme ? light : dark
 
@@ -12,6 +12,9 @@ const ContentContainer = ({ columns, children }) => {
     color: theme.textColor,
     backgroundColor: theme.bgColor,
     width: `${width}%`
+  }
+  if (maxWidth !== undefined) {
+    styles.maxWidth = maxWidth
   }
 
   return (

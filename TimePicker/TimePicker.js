@@ -38,16 +38,16 @@ const TimePicker = ({ label, name, handlerChange, fullwidth, cleared }) => {
     setPopUp(false)
     setSelectedTime(outputDate)
   }
-  const handleChangeUpComponent = (name, selectedDate) => {
-    handlerChange(name, selectedDate)
-  }
+  
 
+  
   /* use effects - submit data to parent form when selectedDate state changes */
+  /* handlerChange must be a useCallback */
   useEffect(() => {
     if(selectedTime) {
-      handleChangeUpComponent(name, selectedTime)
+      handlerChange(name, selectedTime)
     }
-  }, [selectedTime, name])
+  }, [name, selectedTime, handlerChange])
 
   useEffect(() => {
     if(cleared) setSelectedTime()

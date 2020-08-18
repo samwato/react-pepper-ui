@@ -29,7 +29,7 @@ const ThemeContextProvider = ({ children }) => {
       successDark: 'rgb(96,196,128)',
       errorLight: 'rgba(224,44,84,0.1)',
       errorDark: 'rgb(224,44,84)',
-      shadow1: '0px 4px 8px rgba(0, 0, 0, 0.03)',
+      // shadow1: '0px 4px 8px rgba(0, 0, 0, 0.03)',
       borderRadius: '7px',
       transition: 'cubic-bezier(0.4, 0, 0.2, 1)'
     },
@@ -53,7 +53,7 @@ const ThemeContextProvider = ({ children }) => {
       successDark: 'rgb(96,196,128)',
       errorLight: 'rgba(224,44,84,0.1)',
       errorDark: 'rgb(224,44,84)',
-      shadow1: '0px 4px 8px rgba(0, 0, 0, 0.05)',
+      // shadow1: '0px 4px 8px rgba(0, 0, 0, 0.05)',
       borderRadius: '7px',
       transition: 'cubic-bezier(0.4, 0, 0.2, 1)'
     }

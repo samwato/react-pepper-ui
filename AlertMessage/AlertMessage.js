@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react'
+import React, { useContext } from 'react'
 import { ThemeContext } from '../ThemeContext'
 import css from './AlertMessage.module.css'
 import buildIcons from '../utils/buildIcons'

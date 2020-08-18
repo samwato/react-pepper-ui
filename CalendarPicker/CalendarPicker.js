@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useState, useContext } from 'react'
 import { ThemeContext } from '../ThemeContext'
 import css from './CalendarPicker.module.css'
 import moment from 'moment'
@@ -51,9 +51,7 @@ const CalendarPicker = ({ label, name, handlerChange, fullwidth, cleared, value 
   const buttonStyles = {
     color: theme.textColor
   }
-  let iconStyles = {
-    marginRight: '7px'
-  }
+
 
 
 
@@ -80,7 +78,7 @@ const CalendarPicker = ({ label, name, handlerChange, fullwidth, cleared, value 
     } else if (item.current) {
       return (
         <button
-          key={i} name={item.date} style={buttonStyles}
+          key={i} name={item.date}
           style={{ backgroundColor: theme.featureDark, color: 'white', fontWeight: 'bold' }}
           className={css.calendar_item}
           onClick={handleDateSelected}>
