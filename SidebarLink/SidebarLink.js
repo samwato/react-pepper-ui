@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import css from './SidebarLink.module.css'
 import buildIcons from '../utils/buildIcons'
 import { ThemeContext } from '../ThemeContext'
+import { ViewportContext } from '../ViewportContext'
 
 /* Link from react router */
 import { Link, useRouteMatch } from 'react-router-dom'
@@ -9,6 +10,7 @@ import { Link, useRouteMatch } from 'react-router-dom'
 const SidebarLink = ({ to, exact, children, handler, icon }) => {
   const { isLightTheme, light, dark } = useContext(ThemeContext)
   const theme = isLightTheme ? light : dark
+  const { isMobile } = useContext(ViewportContext)
 
   const match = useRouteMatch({
     path: to,
@@ -33,7 +35,9 @@ const SidebarLink = ({ to, exact, children, handler, icon }) => {
 
   return (
     <Link
-      onClick={handler}
+      onClick={() => {
+        if (isMobile) handler()
+      }}
       className={css.link}
       style={styles}
       to={to}
