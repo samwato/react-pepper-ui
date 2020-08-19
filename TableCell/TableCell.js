@@ -8,7 +8,7 @@ const TableCell = ({ children, prefix, suffix }) => {
 
   const containerStyles = {
     color: theme.textColor,
-    borderTop: `1px solid ${theme.color2}`
+    borderBottom: `1px solid ${theme.color2}`
   }
 
   return (

@@ -1,0 +1,15 @@
+.sidebar {
+  height: calc(100vh - 50px);
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  justify-content: space-between;
+  min-width: 240px;
+  padding-top: 20px;
+  padding-bottom: 40px;
+  padding-left: 20px;
+  transition: all .25s cubic-bezier(.4,0,.2,1);
+  left: 0;
+  position: fixed;
+  overflow: auto;
+}

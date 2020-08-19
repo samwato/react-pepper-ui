@@ -35,6 +35,10 @@ const Button = ({ varient, size, type, handler, name, fullwidth, grouped, childr
     styles.color = theme.errorDark
     styles.backgroundColor = theme.errorLight
     styles.border = `1px solid ${theme.errorDark}`
+  } else if (varient === 'delete') {
+    styles.color = 'white'
+    styles.backgroundColor = theme.errorDark
+    styles.border = `1px solid ${theme.errorDark}`
   } else {
     styles.color = 'white'
     styles.backgroundColor = theme.featureDark

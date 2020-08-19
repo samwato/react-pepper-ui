@@ -63,14 +63,14 @@ const Dropdown = ({ varient, title, children, minWidth, grouped, prefix }) => {
   }
   
   if(grouped === 'left') {
-    buttonStyles.borderRadius = '10px 0 0 10px'
+    buttonStyles.borderRadius = `${theme.borderRadius} 0 0 ${theme.borderRadius}`
     buttonStyles.borderRight = 'none'
   }
   if(grouped === 'middle') {
     buttonStyles.borderRadius = '0'
   }
   if(grouped === 'right') {
-    buttonStyles.borderRadius = '0 10px 10px 0'
+    buttonStyles.borderRadius = `0 ${theme.borderRadius} ${theme.borderRadius} 0`
     buttonStyles.borderLeft = 'none'
   }
   

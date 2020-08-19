@@ -5,7 +5,7 @@ import css from './NavLink.module.css'
 /* Link from react router */
 import { Link, useRouteMatch } from 'react-router-dom'
 
-const NavLink = ({ to, exact, children, grouped }) => {
+const NavLink = ({ to, exact, children, grouped, handler }) => {
   const { isLightTheme, light, dark } = useContext(ThemeContext)
   const theme = isLightTheme ? light : dark
 
@@ -42,6 +42,7 @@ const NavLink = ({ to, exact, children, grouped }) => {
 
   return (
     <Link
+      onClick={handler}
       className={css.navlink}
       style={styles}
       to={to}

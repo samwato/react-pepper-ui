@@ -106,7 +106,7 @@ const DatePicker = ({ label, name, handlerChange, fullwidth, cleared, grouped, s
   }
   
   if(grouped === 'left') {
-    inputStyles.borderRadius = '10px 0 0 10px'
+    inputStyles.borderRadius = `${theme.borderRadius} 0 0 ${theme.borderRadius}`
     inputStyles.borderRight = 'none'
     containerStyles.margin = '0'
   }
@@ -116,7 +116,7 @@ const DatePicker = ({ label, name, handlerChange, fullwidth, cleared, grouped, s
     inputStyles.borderRight = 'none'
   }
   if(grouped === 'right') {
-    inputStyles.borderRadius = '0 10px 10px 0'
+    inputStyles.borderRadius = `0 ${theme.borderRadius} ${theme.borderRadius} 0`
     containerStyles.margin = '0'
   }
   

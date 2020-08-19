@@ -1,0 +1,12 @@
+.container {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+}
+
+.icon {
+  width: 18px;
+  height: auto;
+  margin-right: 12px;
+}

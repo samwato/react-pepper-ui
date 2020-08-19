@@ -4,10 +4,16 @@ export { default as NavBar } from './NavBar/NavBar'
 export { default as NavContainer } from './NavContainer/NavContainer'
 export { default as NavSpacer } from './NavSpacer/NavSpacer'
 export { default as NavLink } from './NavLink/NavLink'
+export { default as NavTitle } from './NavTitle/NavTitle'
 export { default as NavFooter } from './NavFooter/NavFooter'
 export { default as Dropdown } from './Dropdown/Dropdown'
 export { default as DropdownLink } from './DropdownLink/DropdownLink'
 export { default as DropdownItem } from './DropdownItem/DropdownItem'
+export { default as MenuToggle } from './MenuToggle/MenuToggle'
+export { default as Sidebar } from './Sidebar/Sidebar'
+export { default as SidebarItem } from './SidebarItem/SidebarItem'
+export { default as SidebarLink } from './SidebarLink/SidebarLink'
+export { default as SidebarContainer } from './SidebarContainer/SidebarContainer'
 
 /* Form Components */
 export { default as Form } from './Form/Form'
@@ -29,12 +35,16 @@ export { default as Spacer } from './Spacer/Spacer'
 export { default as ButtonGroup } from './ButtonGroup/ButtonGroup'
 export { default as ButtonSpacer } from './ButtonSpacer/ButtonSpacer'
 export { default as RefreshButton } from './RefreshButton/RefreshButton'
+export { default as RefreshLink } from './RefreshLink/RefreshLink'
+export { default as LogoutLink } from './LogoutLink/LogoutLink'
 
 /* Layout Components */
 export { default as Dashboard } from './Dashboard/Dashboard'
 export { default as Layout } from './Layout/Layout'
 export { default as ContentContainer } from './ContentContainer/ContentContainer'
 export { default as ContentHeader } from './ContentHeader/ContentHeader'
+export { default as ContentHeaderItem } from './ContentHeaderItem/ContentHeaderItem'
+export { default as Grid } from './Grid/Grid'
 
 /* Table */
 export { default as Table } from './Table/Table'

@@ -46,24 +46,37 @@ const Dialog = ({ size, varient, buttonText, headerText, children, maxWidth, ico
     buttonStyles.color = theme.featureDark
     buttonStyles.backgroundColor = theme.featureLight
     buttonStyles.border = `1px solid ${theme.featureLight}`
+    iconColor = theme.featureDark
   } else if (varient === 'outline') {
     buttonStyles.color = theme.textColor
     buttonStyles.backgroundColor = theme.color1
     buttonStyles.border = `1px solid ${theme.color2}`
+    iconColor = theme.textColor
   } else if (varient === 'normal') {
     buttonStyles.color = theme.textColor
     buttonStyles.backgroundColor = theme.color3
     buttonStyles.border = `1px solid ${theme.color3}`
+    iconColor = theme.textColor
   } else if (varient === 'error') {
+    buttonStyles.color = theme.errorDark
+    buttonStyles.backgroundColor = theme.color1
+    buttonStyles.border = `1px solid ${theme.color2}`
+    iconColor = theme.errorDark
+  } else if (varient === 'delete') {
     buttonStyles.color = 'white'
     buttonStyles.backgroundColor = theme.errorDark
     buttonStyles.border = `1px solid ${theme.errorDark}`
+    iconColor = 'white'
+  } else if (varient === 'text') {
+    buttonStyles.color = 'white'
+    buttonStyles.backgroundColor = theme.textColor
+    buttonStyles.border = `1px solid ${theme.textColor}`
     iconColor = 'white'
   } else {
     buttonStyles.color = 'white'
     buttonStyles.backgroundColor = theme.featureDark
     buttonStyles.border = `1px solid ${theme.featureDark}`
-    iconColor = theme.textColor
+    iconColor = 'white'
   }
   
   let dialogStyles = {
@@ -92,7 +105,7 @@ const Dialog = ({ size, varient, buttonText, headerText, children, maxWidth, ico
   }
   
   const dialogHeaderStyles = {
-    backgroundColor: theme.color2,
+    backgroundColor: theme.color1,
     borderBottom: `1px solid ${theme.color3}`
   }
   

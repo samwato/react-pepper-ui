@@ -1,0 +1,27 @@
+.link {
+  padding: 10px 20px;
+  font-size: 14px;
+  outline: none;
+  height: 40px;
+  opacity: 1;
+  cursor: auto;
+  text-decoration: none;
+  box-sizing: border-box;
+  color: unset;
+  text-decoration: none;
+  width: 100%;
+  line-height: 20px;
+  display: flex;
+}
+
+.link:hover {
+  opacity: 0.8;
+  cursor: pointer;
+  background-color: rgba(0,0,0,0.05);
+}
+
+.icon {
+  width: 16px;
+  height: auto;
+  margin-right: 12px;
+}
