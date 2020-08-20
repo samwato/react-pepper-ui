@@ -43,8 +43,14 @@
   transform: rotate(45deg);
 }
 
-.icon {
+.arrow_icon {
   width: 18px;
   height: 18px;
   margin-left: 2px;
+}
+
+.icon {
+  width: 16px;
+  height: auto;
+  margin-right: 10px;
 }

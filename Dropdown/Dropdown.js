@@ -3,7 +3,7 @@ import { ThemeContext } from '../ThemeContext'
 import css from './Dropdown.module.css'
 import buildIcons from '../utils/buildIcons'
 
-const Dropdown = ({ varient, title, children, minWidth, grouped, prefix }) => {
+const Dropdown = ({ varient, title, children, minWidth, grouped, prefix, icon }) => {
   const { isLightTheme, light, dark } = useContext(ThemeContext)
   const theme = isLightTheme ? light : dark
     
@@ -26,7 +26,7 @@ const Dropdown = ({ varient, title, children, minWidth, grouped, prefix }) => {
     boxShadow: theme.shadow1,
     borderRadius: theme.borderRadius
   }
-
+  
   if (varient === 'secondary') {
     buttonStyles.color = theme.featureDark
     buttonStyles.backgroundColor = theme.featureLight
@@ -84,11 +84,12 @@ const Dropdown = ({ varient, title, children, minWidth, grouped, prefix }) => {
         style={buttonStyles}
         onClick={() => updateClicked(!clicked)}
       >
+        { icon ? <img alt="" className={css.icon} src={icons[icon]} /> : null }
         <span style={{fontWeight: '400'}}>{prefix}</span>
         <span>{title}</span>
         <img
           alt=""
-          className={css.icon}
+          className={css.arrow_icon}
           src={clicked ? icons['chevron-up'] : icons['chevron-down']}
         />
       </div>
