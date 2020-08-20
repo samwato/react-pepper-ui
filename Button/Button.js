@@ -6,7 +6,7 @@ import buildIcons from '../utils/buildIcons'
 const Button = ({ varient, size, type, handler, name, fullwidth, grouped, children, icon, disabled }) => {
   const { isLightTheme, light, dark } = useContext(ThemeContext)
   const theme = isLightTheme ? light : dark
-
+  
   let styles = {
     boxShadow: theme.shadow1,
     borderRadius: theme.borderRadius
