@@ -3,6 +3,13 @@
   margin-bottom: 15px;
 }
 
+.label {
+  display: block;
+  font-size: 0.9em;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
 .date_picker_container {
   padding: 15px;
   border-radius: 10px;

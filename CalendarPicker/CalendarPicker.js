@@ -101,6 +101,8 @@ const CalendarPicker = ({ label, name, handlerChange, fullwidth, cleared, value 
 
   return (
     <div style={containerStyles} className={css.container}>
+      
+      { label ? <label className={css.label}>{label}</label> : null }
 
       {/* calendar */}
         <div style={datePickerContainerStyles} className={css.date_picker_container}>
