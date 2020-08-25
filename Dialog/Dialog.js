@@ -165,8 +165,8 @@ const Dialog = ({ size, varient, buttonText, headerText, children, maxWidth, ico
             </div>
             <div className={css.dialog_content}>
               
-                
-              {children}
+              {clicked ? children : null}
+              
             </div>
             
           </div>
