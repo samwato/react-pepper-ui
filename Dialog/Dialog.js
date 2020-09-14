@@ -136,7 +136,8 @@ const Dialog = ({ size, varient, buttonText, headerText, children, maxWidth, ico
       <button
         className={css.button}
         style={buttonStyles}
-        onClick={() => {
+        onClick={(e) => {
+          e.preventDefault()
           updateClicked(!clicked)
           if (handler !== undefined) {
             handler()
@@ -157,7 +158,8 @@ const Dialog = ({ size, varient, buttonText, headerText, children, maxWidth, ico
               <h4>{headerText}</h4>
               <button
                 className={css.dialog_close}
-                onClick={() => {
+                onClick={(e) => {
+                  e.preventDefault()
                   updateClicked(!clicked)
                 }}>
                 <img alt="" className={css.close_icon} src={closeIcon} />
