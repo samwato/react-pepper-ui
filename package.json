@@ -4,7 +4,7 @@
   "description": "Custom React Component Library",
   "author": "samwato",
   "license": "MIT",
-  "repository": "samwato/@samwato/react-pepper-ui",
+  "repository": "samwato/react-pepper-ui",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.js",

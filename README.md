@@ -38,10 +38,3 @@ export const Page = () => {
   )
 }
 ```
-
-## License
-
-MIT © [samwato](https://github.com/samwato)
-=======
-# react-pepper-ui
->>>>>>> b057063e26ac1c75f83941172efe31b92397b6a9
