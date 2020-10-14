@@ -10,18 +10,32 @@
 npm install --save @samwato/react-pepper-ui
 ```
 
-## Usage
+## Usage Example
 
 ```jsx
-import React, { Component } from 'react'
+import Reactfrom 'react'
+import { Button } from '@samwato/react-pepper-ui'
 
-import MyComponent from '@samwato/react-pepper-ui'
-import '@samwato/react-pepper-ui/dist/index.css'
-
-class Example extends Component {
-  render() {
-    return <MyComponent />
+export const Page = () => {
+  
+  const handler = () => {
+    console.log('Button')
   }
+  
+  return (
+    <div>
+      <Button
+        varient="primary"
+        size="sm"
+        type="submit"
+        handler={handler}
+        fullwidth
+        icon="trash"
+      >
+        Hello
+      </Button>
+    </div>
+  )
 }
 ```
 

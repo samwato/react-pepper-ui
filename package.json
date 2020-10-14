@@ -1,6 +1,6 @@
 {
   "name": "@samwato/react-pepper-ui",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Custom React Component Library",
   "author": "samwato",
   "license": "MIT",
@@ -24,7 +24,9 @@
     "deploy": "gh-pages -d example/build"
   },
   "peerDependencies": {
-    "react": "^16.0.0"
+    "react": "^16.0.0",
+    "moment": "^2.29.1",
+    "react-router-dom": "^5.2.0"
   },
   "devDependencies": {
     "microbundle-crl": "^0.13.10",
@@ -49,5 +51,9 @@
   },
   "files": [
     "dist"
-  ]
+  ],
+  "dependencies": {
+    "moment": "^2.29.1",
+    "react-router-dom": "^5.2.0"
+  }
 }

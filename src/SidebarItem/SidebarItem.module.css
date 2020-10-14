@@ -1,0 +1,22 @@
+.item {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  font-size: 0.9em;
+  width: 100%;
+  font-size: 14px;
+  line-height: 20px;
+  box-sizing: border-box;
+}
+
+.item:hover {
+  opacity: 0.8;
+  cursor: pointer;
+  background-color: rgba(0,0,0,0.05);
+}
+
+.icon {
+  width: 16px;
+  height: auto;
+  margin-right: 12px;
+}

@@ -1,0 +1,10 @@
+.item {
+  font-size: 14px;
+  display: flex;
+}
+
+.icon {
+  width: 16px;
+  height: auto;
+  margin-right: 12px;
+}

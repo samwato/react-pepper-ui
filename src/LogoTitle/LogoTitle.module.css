@@ -1,0 +1,11 @@
+.title {
+  font-weight: 500;
+  font-size: 1.3em;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

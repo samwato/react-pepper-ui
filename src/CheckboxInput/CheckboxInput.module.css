@@ -1,0 +1,47 @@
+.container {
+  margin-bottom: 10px;
+  display: grid;
+  flex-wrap: wrap;
+}
+.label {
+  font-size: 0.9em;
+  font-weight: 500;
+  margin: 10px 0;
+}
+
+.radio {
+  display: flex;
+  margin-bottom: 15px;
+  margin-right: 15px;
+  cursor: pointer;
+  position: relative;
+  align-items: center;
+}
+
+.radio:hover {
+  opacity: 0.8;
+}
+
+.input {
+  position: absolute;
+  opacity: 0;
+}
+
+.title {
+  font-weight: 500;
+}
+
+.checkmark {
+  height: 20px;
+  width: 20px;
+  border-radius: 5px;
+  margin-right: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  width: 18px;
+  height: auto;
+}

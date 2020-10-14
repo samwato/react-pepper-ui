@@ -1,0 +1,20 @@
+.container {
+  margin-bottom: 40px;
+  overflow: auto;
+}
+
+.title {
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.table {
+  display: grid;
+  font-size: 13px;
+}
+
+.table_title {
+  padding: 15px 20px;
+}

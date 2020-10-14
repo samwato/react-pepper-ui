@@ -1,0 +1,19 @@
+.navlink {
+  padding: 0 20px;
+  font-size: 0.9em;
+  font-weight: 500;
+  outline: none;
+  height: 40px;
+  opacity: 1;
+  cursor: auto;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.navlink:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}

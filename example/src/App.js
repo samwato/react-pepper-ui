@@ -1,10 +1,27 @@
 import React from 'react'
 
-import { ExampleComponent } from '@samwato/react-pepper-ui'
+import { Button } from '@samwato/react-pepper-ui'
 import '@samwato/react-pepper-ui/dist/index.css'
 
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
+  
+  const handler = () => {
+    console.log('Button')
+  }
+  
+  return (
+    <div>
+      <Button
+        varient="primary"
+        size="sm"
+        type="submit"
+        handler={handler}
+        icon="trash"
+      >
+        Hello
+      </Button>
+    </div>
+  )
 }
 
 export default App
