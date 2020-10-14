@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # @samwato/react-pepper-ui
 
 > Custom React Component Library
