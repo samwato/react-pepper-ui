@@ -1,3 +1,7 @@
+/* Contexts */
+export { default as ThemeContextProvider } from './ThemeContext'
+export { default as ViewportContextProvider } from './ViewportContext'
+
 /* Header/Nav Components */
 export { default as LogoTitle } from './LogoTitle/LogoTitle'
 export { default as NavBar } from './NavBar/NavBar'
