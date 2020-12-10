@@ -6,8 +6,7 @@ import buildIcons from '../utils/buildIcons'
 const CheckboxInput = ({ required, fullwidth, label, options, handleChange, gridColumns }) => {
   const { isLightTheme, light, dark } = useContext(ThemeContext)
   const theme = isLightTheme ? light : dark
-  
-      
+    
   /* reformatting trick with custom radio */
   const handleClick = (name) => {
     handleChange(name)
@@ -29,6 +28,8 @@ const CheckboxInput = ({ required, fullwidth, label, options, handleChange, grid
       { label ? <label className={css.label}>{label}</label> : null }
 
       {options.map((option, i) => {
+        // handles null and undefined values which create errors
+        let newValue = option.value !== null && option.value !== undefined ? option.value : false
         return (
           <div
             className={css.radio}
@@ -39,10 +40,11 @@ const CheckboxInput = ({ required, fullwidth, label, options, handleChange, grid
               className={css.input}
               type="radio"
               name={option.name}
-              value={option.value}
+              value={newValue}
               onChange={() => null}
-              checked={option.value}
+              checked={newValue}
             />
+            
             <div
               style={{
                 border: `1px solid ${theme.color2}`,
@@ -51,7 +53,7 @@ const CheckboxInput = ({ required, fullwidth, label, options, handleChange, grid
               }}
               className={css.checkmark}
             >
-              { option.value ? <img alt="" src={icons.check} className={css.icon}/> : null }
+              { newValue ? <img alt="" src={icons.check} className={css.icon}/> : null }
             </div>
             <span className={css.title}>{option.title}</span>
           </div>

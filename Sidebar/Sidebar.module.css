@@ -5,8 +5,9 @@
   box-sizing: border-box;
   justify-content: space-between;
   min-width: 240px;
+  max-width: 240px;
   padding-top: 20px;
-  padding-bottom: 40px;
+  padding-bottom: 30px;
   padding-left: 20px;
   transition: all .25s cubic-bezier(.4,0,.2,1);
   left: 0;
