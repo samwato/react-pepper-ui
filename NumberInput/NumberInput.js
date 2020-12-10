@@ -18,6 +18,14 @@ const NumberInput = ({ required, label, prefix, name, value, fullwidth, handleCh
   if(fullwidth) {
     containerStyles.width = '100%'
   }
+  
+  let numberValue
+  if (value === null || value === undefined) {
+    numberValue = ''
+  } else {
+    numberValue = value
+  }
+  
 
   return (
     <div className={css.container} style={containerStyles}>
@@ -29,7 +37,7 @@ const NumberInput = ({ required, label, prefix, name, value, fullwidth, handleCh
           className={css.input}
           type="number"
           name={name}
-          value={ value ? value : '' }
+          value={value}
           onChange={handleChange}
         />
       </div>
