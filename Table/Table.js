@@ -11,7 +11,7 @@ const Table = ({ title, columns, children, active, fullwidth }) => {
     backgroundColor: theme.color1,
     boxShadow: theme.shadow1,
     opacity: active ? '1' : '0.5',
-    borderRadius: theme.borderRadius
+    borderRadius: theme.borderRadius,
   }
 
   const tableStyles = {

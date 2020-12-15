@@ -15,10 +15,8 @@ const ThemeContextProvider = ({ children }) => {
   const [theme, updateTheme] = useState({
     isLightTheme: true,
     light: {
-      // bgColor: 'rgb(244, 247, 250)',
       bgColor: 'rgb(255, 255, 255)',
       hdColor: 'rgb(255, 255, 255)',
-      // hdColor: 'rgb(244, 247, 250)',
       color1: 'rgb(255,255,255)',
       color2: 'rgb(238,241,243)',
       color3: 'rgb(219,222,224)',
