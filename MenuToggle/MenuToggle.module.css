@@ -21,3 +21,7 @@
 .icon {
   display: block;
 }
+
+.hide {
+  display: none;
+}

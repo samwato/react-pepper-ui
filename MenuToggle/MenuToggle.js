@@ -1,20 +1,18 @@
 import React, { useContext } from 'react'
 import { ThemeContext } from '../ThemeContext'
-import { ViewportContext } from '../ViewportContext'
 import css from './MenuToggle.module.css'
 import buildIcons from '../utils/buildIcons'
 
-const MenuToggle = ({ toggle, handler }) => {
+const MenuToggle = ({ toggle, handler, isMobile }) => {
   const { isLightTheme, light, dark } = useContext(ThemeContext)
   const theme = isLightTheme ? light : dark
-  const { isMobile } = useContext(ViewportContext)
 
   /* icons */
   const icons = buildIcons(theme.iconColor)
 
   return (
     <button
-      className={css.button}
+      className={isMobile ? css.button : [css.button, css.hide].join(' ')}
       onClick={() => {
         if (isMobile) handler()
       }}

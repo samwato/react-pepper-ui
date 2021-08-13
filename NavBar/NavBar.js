@@ -8,8 +8,8 @@ const NavBar = ({ children, fixed }) => {
 
   let styles = {
     color: theme.textColor,
-    backgroundColor: theme.hdColor,
-    borderBottom: `1px solid ${theme.color2}`
+    background: theme.hdColor,
+    boxShadow: '0 0.7px 1.4px rgb(0 0 0 / 7%), 0 1.9px 4px rgb(0 0 0 / 5%), 0 4.5px 10px rgb(0 0 0 / 5%), 0 15px 32px rgb(0 0 0 / 4%)',
   }
   
   if (fixed) {

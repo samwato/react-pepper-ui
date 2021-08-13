@@ -16,7 +16,7 @@ const ThemeContextProvider = ({ children }) => {
     isLightTheme: true,
     light: {
       bgColor: 'rgb(255, 255, 255)',
-      hdColor: 'rgb(255, 255, 255)',
+      hdColor: 'rgb(255,255,255)',
       color1: 'rgb(255,255,255)',
       color2: 'rgb(238,241,243)',
       color3: 'rgb(219,222,224)',
